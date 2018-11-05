@@ -63,7 +63,7 @@ class ryu.ofproto.ofproto_v1_0_parser.OFPPacketIn(datapath, buffer_id=None, tota
 
 **Ejemplo**
 
-``
+```python 
 @set_ev_cls(ofp_event.EventOFPPacketIn, MAIN_DISPATCHER)
 def packet_in_handler(self, ev):
     msg = ev.msg
