@@ -96,11 +96,12 @@ Mensaje que permite inyectar paquetes desde el controlador al switch. La siguien
 
 La estructura de este mensaje para la version 1.3.0 del protocolo Openflow se muestra a continuación:
 
-![PacketOut](http://flowgrammable.org/static/media/uploads/msgs/packet_out.png)
+![PacketOut](http://flowgrammable.org/static/media/uploads/msg_structure/packet_out_1_1.png)
 
 La parte del API de Ryu relacionada con este mensaje se encuentra en el siguiente [enlace](https://ryu.readthedocs.io/en/latest/ofproto_v1_3_ref.html#packet-out-message). 
 
-**Clase **
+**Clase**
+
 ```python 
 class ryu.ofproto.ofproto_v1_3_parser.OFPPacketOut(datapath, buffer_id=None, in_port=None, actions=None, data=None, actions_len=None)
 ```
@@ -117,6 +118,50 @@ def send_packet_out(self, datapath, buffer_id, in_port):
                                   in_port, actions)
     datapath.send_msg(req)
 ```
+
+#### FlowMod Message ####
+Este es uno de los principales mensajes pues permite al controlador modificar el estado de un switch openflow. A continuación se muestra la secuencia:
+
+![FlowMod](http://flowgrammable.org/static/media/uploads/msgs/flow_mod_sequence.png)
+
+La estructura de este mensaje para la version 1.3.0 del protocolo Openflow se muestra a continuación:
+
+![FlowMod](http://flowgrammable.org/static/media/uploads/msgs/flow_mod_1_1.png)
+
+La parte del API de Ryu relacionada con este mensaje se encuentra en el siguiente [enlace](https://ryu.readthedocs.io/en/latest/ofproto_v1_3_ref.html#ryu.ofproto.ofproto_v1_3_parser.OFPFlowMod). 
+
+**Clase**
+
+```python 
+class ryu.ofproto.ofproto_v1_3_parser.OFPFlowMod(datapath, cookie=0, cookie_mask=0, table_id=0, command=0, idle_timeout=0, hard_timeout=0, priority=32768, buffer_id=4294967295, out_port=0, out_group=0, flags=0, match=None, instructions=None)
+```
+
+**Ejemplo**
+
+```python 
+def send_flow_mod(self, datapath):
+    ofp = datapath.ofproto
+    ofp_parser = datapath.ofproto_parser
+
+    cookie = cookie_mask = 0
+    table_id = 0
+    idle_timeout = hard_timeout = 0
+    priority = 32768
+    buffer_id = ofp.OFP_NO_BUFFER
+    match = ofp_parser.OFPMatch(in_port=1, eth_dst='ff:ff:ff:ff:ff:ff')
+    actions = [ofp_parser.OFPActionOutput(ofp.OFPP_NORMAL, 0)]
+    inst = [ofp_parser.OFPInstructionActions(ofp.OFPIT_APPLY_ACTIONS,
+                                             actions)]
+    req = ofp_parser.OFPFlowMod(datapath, cookie, cookie_mask,
+                                table_id, ofp.OFPFC_ADD,
+                                idle_timeout, hard_timeout,
+                                priority, buffer_id,
+                                ofp.OFPP_ANY, ofp.OFPG_ANY,
+                                ofp.OFPFF_SEND_FLOW_REM,
+                                match, inst)
+    datapath.send_msg(req)
+```
+
 
 
 
