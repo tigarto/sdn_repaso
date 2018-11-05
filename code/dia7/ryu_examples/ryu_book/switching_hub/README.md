@@ -28,16 +28,23 @@ depende de la logica de esta.
 ## Importancia de conocer el protocolo (o por lo menos algunos aspectos) ##
 
 Recuerde que gracias a la abstracción sobre la red que ofrece OpenFlow no nos tenemos que ocupar por los detalles de
-bajo nivel para la implementación de una aplicación que se ejecuta en el controlador para interactuar con la red. En el paso 1
-anteriormente descrito se menciona la necesidad de importar clases y librerias base. Pero una cosa es importar y otra cosa es usar
-por dicha razon es necesario conocer no solo el modelo de programacin del controlador (anteriormente mencionado) si no con que
-esta este relacionado. Para el caso, este modelo esta relacionado con el protocolo Openflow, por lo tanto, el conocimiento, por lo
-menos de los aspectos basicos, para conocer que elemento del protocolo esta abstrayendo una clase determinada y asi poder 
-hacer uso de objetos asociados a esta para la implementación de su lógica. Esto lo podemos reducir a dos pasos:
+bajo nivel para la implementación de una aplicación que se ejecuta en el controlador para interactuar con la red. En el paso 1 anteriormente descrito se menciona la necesidad de importar clases y librerias base. Pero una cosa es importar y otra cosa es usar por dicha razon es necesario conocer no solo el modelo de programacin del controlador (anteriormente mencionado) si no con que esta este relacionado. Para el caso, este modelo esta relacionado con el protocolo Openflow, por lo tanto, el conocimiento, por lo menos de los aspectos basicos, para conocer que elemento del protocolo esta abstrayendo una clase determinada y asi poder hacer uso de objetos asociados a esta para la implementación de su lógica. Esto lo podemos reducir a dos pasos:
 1. Conocimiento de la especificacin Openflow a emplear ([Enlaces con diferentes especificaciones](https://www.opennetworking.org/software-defined-standards/specifications/))
 2. Conocimiento del API del controlador, el cual abstrae dicha especificación ([API de Ryu](https://ryu.readthedocs.io/en/latest/index.html))
 
 ### Algunos mensajes del protocolo empleados ###
-En la pagina de (flowgramable)[http://flowgrammable.org/sdn/openflow/message-layer/] se encuentran de manera resumida los diferentes mensajes Openflow. A
-continuación se muestran los mas importantes y la parte del API relacionada con estos.
+En la pagina de [flowgramable](http://flowgrammable.org/sdn/openflow/message-layer/) se encuentran de manera resumida los diferentes mensajes Openflow. A continuación se muestran los mas importantes y la parte del API relacionada con estos. Desde el punto de vista mas basico Openflow (v1.3 para el caso) se divide en 3 componentes principales tal y como se muestra en la siguiente figura:
+
+![OpenFlow v1.3.0 architecture](http://docs.ruckuswireless.com/fastiron/08.0.61/fastiron-08061-sdnguide/GUID-913C049F-EC28-4C54-B736-6A59100DC932-output_low.png)
+
+Esta arquitectura muestra 3 componentes principales: el controlador, relacionado con la capa de control; el switch, relacionado con la capa de datos y el protocolo Openflow que permite la comunicacion entre los dos anteriores. Un switch Openflow posee varias tablas de flujo en las cuales se definen el comportamiento del trafico en la red, siendo el controlador el dispositivo encargado de definir el contenido de cada uno de los flujos de acuerdo a las necesidades del programador.
+
+Cada flujo se divide basicamente en 3 campos: Matching Fields, Action List y Stats. La siguiente figura muestra la forma de una entrada tipica de la tabla de flujos para el protocolo openflow v1.3:
+
+![OpenFlow 1.3.0 flow table entries](http://docs.ruckuswireless.com/fastiron/08.0.61/fastiron-08061-sdnguide/GUID-4B59E1AC-6945-4297-A4F5-4E2D45EB85EA-output_low.png)
+
+Ahora procedamos a ver un poco mas los mensajes empleados y un fragmento de codigo OpenFlow relacionado con el API del controlador.
+
+#### ####
+
 
