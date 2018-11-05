@@ -162,6 +162,8 @@ def send_flow_mod(self, datapath):
     datapath.send_msg(req)
 ```
 
+####Estructuras importantes####
+Como se mostro al principio, cada flujo de la tabla de flujos del switch tiene una estructura como la que se muestra en la siguiente figura:
 
-
+[Flujo](https://www.researchgate.net/profile/Tooska_Dargahi/publication/315734989/figure/fig7/AS:667926713622534@1536257546661/OpenFlow-V100-Flow-Table-Architecture.png)
 
