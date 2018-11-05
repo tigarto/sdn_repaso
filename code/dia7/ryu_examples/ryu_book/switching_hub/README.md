@@ -227,7 +227,7 @@ ovs-ofctl -O OpenFlow13 dump-flows s1
 ```
 3. Arrancar el controlador
 ```
-ryu-manager --verbose ryu.app.example_switch_13
+ryu-manager --verbose example_switch_13.py
 ```
 
 4. Mirar los flujos que tiene el switch
