@@ -31,13 +31,13 @@ la obtencion de las estadisticas de flujos y la obtencion de estadisticas de un 
 
 ##### Estadistcas de un flujo #####
 
-La estructura del body cuando lo que se solicita son las estadisticas de flujos se muestra en la siguiente figura:
+La estructura cuando lo que se solicita son las estadisticas de flujos se muestra en la siguiente figura:
 
 ![StatsReq](http://flowgrammable.org/static/media/uploads/msgs/stats/stats_req_flow_1_1.png)
 
 La parte del API de Ryu relacionada esta estructura se encuentra en el siguiente [enlace](https://ryu.readthedocs.io/en/latest/ofproto_v1_3_ref.html#ryu.ofproto.ofproto_v1_3_parser.OFPFlowStatsRequest). 
 
-**Clase **
+**Clase**
 
 ```python 
 class ryu.ofproto.ofproto_v1_3_parser.OFPFlowStatsRequest(datapath, flags=0, table_id=255, out_port=4294967295, out_group=4294967295, cookie=0, cookie_mask=0, match=None, type_=None)```
@@ -61,13 +61,13 @@ def send_flow_stats_request(self, datapath):
 
 ##### Estadistcas de un de puerto #####
 
-La estructura del body cuando lo que se solicita son las estadisticas de puertos se muestra en la siguiente figura:
+La estructura cuando lo que se solicita son las estadisticas de puertos se muestra en la siguiente figura:
 
 ![StatsReq](http://flowgrammable.org/static/media/uploads/msgs/stats/stats_req_port_1_1.png)
 
 La parte del API de Ryu relacionada esta estructura se encuentra en el siguiente [enlace](https://ryu.readthedocs.io/en/latest/ofproto_v1_3_ref.html#ryu.ofproto.ofproto_v1_3_parser.OFPPortStatsRequest). 
 
-**Clase **
+**Clase**
 
 ```python 
 class ryu.ofproto.ofproto_v1_3_parser.OFPPortStatsRequest(datapath, flags=0, port_no=4294967295, type_=None)
