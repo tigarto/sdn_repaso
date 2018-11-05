@@ -45,6 +45,47 @@ Cada flujo se divide basicamente en 3 campos: Matching Fields, Action List y Sta
 
 Ahora procedamos a ver un poco mas los mensajes empleados y un fragmento de codigo OpenFlow relacionado con el API del controlador.
 
-#### ####
+#### Packet-In Message ####
+Este mensaje es la manera que tiene el switch de enviar un paquete capturado al controlador. Hay dos razones por las cuales esto paso; por la existencia de una accion explicita como el resultado de un matching para este comportamiento, o desde un miss en la parte del match de las tablas, o un error de ttl. Tal y como lo muestra la siguiente figura es el controlador quien lo
+
+[PacketIn](http://flowgrammable.org/static/media/uploads/msgs/packet_in_sequence.png)
+
+La estructura de este mensaje para la version 1.3.0 del protocolo Openflow se muestra a continuación:
+
+[PacketIn](http://flowgrammable.org/static/media/uploads/msgs/packet_in_1_3.png)
+
+La parte del API de Ryu relacionada con este mensaje se encuentra en el siguiente [enlace](https://ryu.readthedocs.io/en/latest/ofproto_v1_0_ref.html#packet-in-message). 
+
+**Clase **
+```python 
+class ryu.ofproto.ofproto_v1_0_parser.OFPPacketIn(datapath, buffer_id=None, total_len=None, in_port=None, reason=None, data=None)
+```
+
+**Ejemplo**
+
+``
+@set_ev_cls(ofp_event.EventOFPPacketIn, MAIN_DISPATCHER)
+def packet_in_handler(self, ev):
+    msg = ev.msg
+    dp = msg.datapath
+    ofp = dp.ofproto
+
+    if msg.reason == ofp.OFPR_NO_MATCH:
+        reason = 'NO MATCH'
+    elif msg.reason == ofp.OFPR_ACTION:
+        reason = 'ACTION'
+    elif msg.reason == ofp.OFPR_INVALID_TTL:
+        reason = 'INVALID TTL'
+    else:
+        reason = 'unknown'
+
+    self.logger.debug('OFPPacketIn received: '
+                      'buffer_id=%x total_len=%d in_port=%d, '
+                      'reason=%s data=%s',
+                      msg.buffer_id, msg.total_len, msg.in_port,
+                      reason, utils.hex_array(msg.data))
+```
+
+
 
 
