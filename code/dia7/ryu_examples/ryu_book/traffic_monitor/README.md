@@ -166,9 +166,18 @@ def port_stats_reply_handler(self, ev):
     self.logger.debug('PortStats: %s', ports)
 ```
 
+En cosntruction
+
+sudo mn --topo single,3 --mac --switch ovsk --controller remote 
 
 
+ryu-manager --verbose simple_monitor_13.py
 
+
+h1 ping -c 1 h2
+
+
+## Enlaces de utilidad ##
 
 * https://ryu.readthedocs.io/en/latest/index.html
 * https://ipcisco.com/course/sdn-course/
