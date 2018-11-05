@@ -210,3 +210,41 @@ actions = [parser.OFPActionOutput(ofproto.OFPP_CONTROLLER, ofproto.OFPCML_NO_BUF
 inst = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS, actions)]
 ```
 
+PAGINA EN CONSTRUCCION: DISCULPE LAS MOLESTIAS CAUSADAS.
+
+http://docs.ruckuswireless.com/fastiron/08.0.61/fastiron-08061-sdnguide/GUID-031030CA-62EC-4009-A516-5510238EF8F4.html
+https://www.semanticscholar.org/paper/Monitoring-latency-with-OpenFlow-Phemius-Bouet/2d06669dab5f5453c1e37ef4520be03749f348e3
+
+
+
+
+ryu-manager simple_switch_13.py
+sudo mn --controller=remote,ip=127.0.0.1 --mac -i 10.1.1.0/24 --switch=ovsk,protocols=OpenFlow13 --topo=linear,4
+
+
+
+
+
+sudo mn --topo single,3 --mac --switch ovsk --controller remote -x
+ovs-vsctl show
+ovs-vsctl set Bridge s1 protocols=OpenFlow13
+ovs-ofctl -O OpenFlow13 dump-flows s1
+
+ryu-manager --verbose ryu.app.example_switch_13
+
+ovs-ofctl -O openflow13 dump-flows s1
+
+
+tcpdump -en -i h1-eth0
+tcpdump -en -i h2-eth0
+tcpdump -en -i h3-eth0
+
+h1 ping -c1 h2
+
+ovs-ofctl -O openflow13 dump-flows s1
+
+
+tcpdump -en -i h1-eth0
+tcpdump -en -i h2-eth0
+tcpdump -en -i h3-eth0
+
