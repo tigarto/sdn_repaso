@@ -162,8 +162,51 @@ def send_flow_mod(self, datapath):
     datapath.send_msg(req)
 ```
 
-####Estructuras importantes####
+### Estructuras importantes ###
 Como se mostro al principio, cada flujo de la tabla de flujos del switch tiene una estructura como la que se muestra en la siguiente figura:
 
-[Flujo](https://www.researchgate.net/profile/Tooska_Dargahi/publication/315734989/figure/fig7/AS:667926713622534@1536257546661/OpenFlow-V100-Flow-Table-Architecture.png)
+![Flujo](https://www.researchgate.net/profile/Tooska_Dargahi/publication/315734989/figure/fig7/AS:667926713622534@1536257546661/OpenFlow-V100-Flow-Table-Architecture.png). A continuación vamos a ver cada uno de los campos anteriormente descritos y su relacion con el API.
+
+#### Campos Match ####
+
+A continuación se muestra la estructura Match para el protocolo Openflow v1.0:
+
+![match](http://flowgrammable.org/static/media/uploads/msgs/match_1_0.png)
+
+La parte del API de Ryu relacionada con esta estructura (para la version 1.0 del protocolo) se encuentra en el siguiente [enlace](https://ryu.readthedocs.io/en/latest/ofproto_v1_0_ref.html#ryu.ofproto.ofproto_v1_0_parser.OFPMatch). 
+
+**Clase**
+
+```python 
+class ryu.ofproto.ofproto_v1_0_parser.OFPMatch(wildcards=None, in_port=None, dl_src=None, dl_dst=None, dl_vlan=None, dl_vlan_pcp=None, dl_type=None, nw_tos=None, nw_proto=None, nw_src=None, nw_dst=None, tp_src=None, tp_dst=None, nw_src_mask=32, nw_dst_mask=32)
+```
+
+**Ejemplo**
+
+```python 
+# compose
+match = parser.OFPMatch(in_port=1, dl_type=0x0800, dl_src='aa:bb:cc:dd:ee:ff', nw_src='192.168.0.1')
+
+# query
+if 'nw_src' in match:
+  print match['nw_src']
+```
+
+
+#### Campos Action ####
+
+A continuación se muestra el payload la estructura Action para el protocolo Openflow v1.0:
+
+![actions payload](http://flowgrammable.org/static/media/uploads/msgs/action_payload_1_0.png)
+
+La parte del API de Ryu relacionada con esta estructura (para la version 1.0 del protocolo) se encuentra en el siguiente [enlace](https://ryu.readthedocs.io/en/latest/ofproto_v1_0_ref.html#action-structures). 
+
+**Clase**: Para este caso hay varias clases relacionadas como se puede constatar en el enlace anterior
+
+**Ejemplo**
+
+```python 
+actions = [parser.OFPActionOutput(ofproto.OFPP_CONTROLLER, ofproto.OFPCML_NO_BUFFER)]
+inst = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS, actions)]
+```
 
