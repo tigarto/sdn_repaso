@@ -201,13 +201,62 @@ A continuación se muestra el payload la estructura Action para el protocolo Ope
 
 La parte del API de Ryu relacionada con esta estructura (para la version 1.0 del protocolo) se encuentra en el siguiente [enlace](https://ryu.readthedocs.io/en/latest/ofproto_v1_0_ref.html#action-structures). 
 
-**Clase**: Para este caso hay varias clases relacionadas como se puede constatar en el enlace anterior
+**Clase**: Para este caso hay varias clases relacionadas como se puede constatar en el enlace anterior.
 
 **Ejemplo**
 
 ```python 
 actions = [parser.OFPActionOutput(ofproto.OFPP_CONTROLLER, ofproto.OFPCML_NO_BUFFER)]
 inst = [parser.OFPInstructionActions(ofproto.OFPIT_APPLY_ACTIONS, actions)]
+```
+## Ejemplo ##
+El ejemplo mostrado a continuación se tomo del siguiente [enlace](https://osrg.github.io/ryu-book/en/html/switching_hub.html)
+
+
+1. Arrancar la topologia:
+```
+sudo mn --topo single,3 --mac --switch ovsk --controller remote -x
+```
+
+2. Configurar el switch (esto se hizo en la consola asociada a este)
+
+```
+ovs-vsctl show
+ovs-vsctl set Bridge s1 protocols=OpenFlow13
+ovs-ofctl -O OpenFlow13 dump-flows s1
+```
+3. Arrancar el controlador
+```
+ryu-manager --verbose ryu.app.example_switch_13
+```
+
+4. Mirar los flujos que tiene el switch
+```
+ovs-ofctl -O openflow13 dump-flows s1
+```
+
+5. tcpdump en cada host
+```
+tcpdump -en -i h1-eth0
+tcpdump -en -i h2-eth0
+tcpdump -en -i h3-eth0
+```
+
+6. Ejecución del comando ping. En la consola de mininet.
+```
+h1 ping -c1 h2
+```
+
+7. Mirando nuevamente los flujos en el controlador
+```
+ovs-ofctl -O openflow13 dump-flows s1
+```
+
+8. tcpdump en cada host
+```
+tcpdump -en -i h1-eth0
+tcpdump -en -i h2-eth0
+tcpdump -en -i h3-eth0
 ```
 
 PAGINA EN CONSTRUCCION: DISCULPE LAS MOLESTIAS CAUSADAS.
@@ -218,33 +267,9 @@ https://www.semanticscholar.org/paper/Monitoring-latency-with-OpenFlow-Phemius-B
 
 
 
-ryu-manager simple_switch_13.py
-sudo mn --controller=remote,ip=127.0.0.1 --mac -i 10.1.1.0/24 --switch=ovsk,protocols=OpenFlow13 --topo=linear,4
 
 
 
 
 
-sudo mn --topo single,3 --mac --switch ovsk --controller remote -x
-ovs-vsctl show
-ovs-vsctl set Bridge s1 protocols=OpenFlow13
-ovs-ofctl -O OpenFlow13 dump-flows s1
-
-ryu-manager --verbose ryu.app.example_switch_13
-
-ovs-ofctl -O openflow13 dump-flows s1
-
-
-tcpdump -en -i h1-eth0
-tcpdump -en -i h2-eth0
-tcpdump -en -i h3-eth0
-
-h1 ping -c1 h2
-
-ovs-ofctl -O openflow13 dump-flows s1
-
-
-tcpdump -en -i h1-eth0
-tcpdump -en -i h2-eth0
-tcpdump -en -i h3-eth0
 
