@@ -46,19 +46,21 @@ Cada flujo se divide basicamente en 3 campos: Matching Fields, Action List y Sta
 Ahora procedamos a ver un poco mas los mensajes empleados y un fragmento de codigo OpenFlow relacionado con el API del controlador.
 
 #### Packet-In Message ####
-Este mensaje es la manera que tiene el switch de enviar un paquete capturado al controlador. Hay dos razones por las cuales esto paso; por la existencia de una accion explicita como el resultado de un matching para este comportamiento, o desde un miss en la parte del match de las tablas, o un error de ttl. Tal y como lo muestra la siguiente figura es el controlador quien lo
 
-[PacketIn](http://flowgrammable.org/static/media/uploads/msgs/packet_in_sequence.png)
+Este mensaje es la manera que tiene el switch de enviar un paquete capturado al controlador. Hay dos razones por las cuales esto paso; por la existencia de una accion explicita como el resultado de un matching para este comportamiento, o desde un miss en la parte del match de las tablas, o un error de ttl. En la siguiente figura se muestra que es el switch quien lo inicia:
+
+![PacketIn](http://flowgrammable.org/static/media/uploads/msgs/packet_in_sequence.png)
 
 La estructura de este mensaje para la version 1.3.0 del protocolo Openflow se muestra a continuación:
 
-[PacketIn](http://flowgrammable.org/static/media/uploads/msgs/packet_in_1_3.png)
+![PacketIn](http://flowgrammable.org/static/media/uploads/msgs/packet_in_1_3.png)
 
 La parte del API de Ryu relacionada con este mensaje se encuentra en el siguiente [enlace](https://ryu.readthedocs.io/en/latest/ofproto_v1_0_ref.html#packet-in-message). 
 
 **Clase **
+
 ```python 
-class ryu.ofproto.ofproto_v1_0_parser.OFPPacketIn(datapath, buffer_id=None, total_len=None, in_port=None, reason=None, data=None)
+class ryu.ofproto.ofproto_v1_3_parser.OFPPacketIn(datapath, buffer_id=None, total_len=None, reason=None, table_id=None, cookie=None, match=None, data=None)
 ```
 
 **Ejemplo**
@@ -80,12 +82,41 @@ def packet_in_handler(self, ev):
         reason = 'unknown'
 
     self.logger.debug('OFPPacketIn received: '
-                      'buffer_id=%x total_len=%d in_port=%d, '
-                      'reason=%s data=%s',
-                      msg.buffer_id, msg.total_len, msg.in_port,
-                      reason, utils.hex_array(msg.data))
+                      'buffer_id=%x total_len=%d reason=%s '
+                      'table_id=%d cookie=%d match=%s data=%s',
+                      msg.buffer_id, msg.total_len, reason,
+                      msg.table_id, msg.cookie, msg.match,
+                      utils.hex_array(msg.data))
 ```
 
+#### Packet-Out Message ####
+Mensaje que permite inyectar paquetes desde el controlador al switch. La siguiente figura muestra que es el controlador quien lo inicia:
+
+![PacketOut](http://flowgrammable.org/static/media/uploads/msgs/packet_out.png)
+
+La estructura de este mensaje para la version 1.3.0 del protocolo Openflow se muestra a continuación:
+
+![PacketOut](http://flowgrammable.org/static/media/uploads/msgs/packet_out.png)
+
+La parte del API de Ryu relacionada con este mensaje se encuentra en el siguiente [enlace](https://ryu.readthedocs.io/en/latest/ofproto_v1_3_ref.html#packet-out-message). 
+
+**Clase **
+```python 
+class ryu.ofproto.ofproto_v1_3_parser.OFPPacketOut(datapath, buffer_id=None, in_port=None, actions=None, data=None, actions_len=None)
+```
+
+**Ejemplo**
+
+```python 
+def send_packet_out(self, datapath, buffer_id, in_port):
+    ofp = datapath.ofproto
+    ofp_parser = datapath.ofproto_parser
+
+    actions = [ofp_parser.OFPActionOutput(ofp.OFPP_FLOOD, 0)]
+    req = ofp_parser.OFPPacketOut(datapath, buffer_id,
+                                  in_port, actions)
+    datapath.send_msg(req)
+```
 
 
 
