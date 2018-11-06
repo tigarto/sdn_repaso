@@ -3,6 +3,8 @@
 
 ### Comandos ###
 
+### Test 1 ###
+
 1. Arrancando la topologia
 ```
 sudo mn --topo single,3 --mac --switch ovsk --controller remote 
@@ -17,7 +19,7 @@ sudo ovs-vsctl set Bridge s1 protocols=OpenFlow13
 3. Arrancando el controlador
 
 ```
-ryu-manager --verbose ryu.app.simple_switch_rest_13
+ryu-manager --verbose simple_switch_rest_13.py
 ```
 
 4. Haciendo ping entre h1 y h2
@@ -32,14 +34,36 @@ h1 ping -c 1 h2
 curl -X GET http://127.0.0.1:8080/simpleswitch/mactable/0000000000000001
 ```
 
-6. Peticion put al controlador
+6. Detenga el controlador y mininet.
+
+### Test 1 ###
+
+1. Arrancando la topologia
+```
+sudo mn --topo single,3 --mac --switch ovsk --controller remote 
+```
+
+2. Configurando el switch
+
+```
+sudo ovs-vsctl set Bridge s1 protocols=OpenFlow13
+```
+
+3. Arrancando el controlador
+
+```
+ryu-manager --verbose simple_switch_rest_13.py
+```
+
+4. Peticion put al controlador
 
 ```
 curl -X PUT -d '{"mac" : "00:00:00:00:00:01", "port" : 1}' http://127.0.0.1:8080/simpleswitch/mactable/0000000000000001
-{"00:00:00:00:00:01": 1}
+
 curl -X PUT -d '{"mac" : "00:00:00:00:00:02", "port" : 2}' http://127.0.0.1:8080/simpleswitch/mactable/0000000000000001
-{"00:00:00:00:00:02": 2, "00:00:00:00:00:01": 1}
 ```
+
+5. Hacer ping entre los h1 y h2. Para el caso se notara una menor demora.
 
 ```
 h1 ping -c 1 h2
