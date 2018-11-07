@@ -26,3 +26,23 @@ https://docs.pylonsproject.org/projects/webob/en/stable/
 
 https://romain.dorgueil.net/blog/en/python/2011/08/22/wsgi-the-first-steps.html
 https://www.oreilly.com/library/view/python-web-frameworks/9781492037873/ch04.html
+
+------------------
+
+http://k0s.org/mozilla/craft/middleware.html
+
+--------------------------
+
+Sobre los decorators:
+http://www.drdobbs.com/web-development/python-24-decorators/184406073
+
+-----
+
+https://pymbook.readthedocs.io/en/latest/collections.html
+
+
+https://www.fullstackpython.com/wsgi-servers.html
+
+
+Ver: http://www.python.org.ar/wiki/WSGI
+
