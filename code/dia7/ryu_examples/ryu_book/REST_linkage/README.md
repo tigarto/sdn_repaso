@@ -94,19 +94,18 @@ A continuacion se resaltan algunos elementos de esta clase:
    * Adquirir el datapath a partir del evento (```python datapath = ev.msg.datapath```) y almacenarlo en ```self.switches```
    * Inicializar self.mac_to_port a vacio  (```python self.mac_to_port.setdefault(datapath.id, {})```), es decir, inicializar cada datapath sin informacion de los diferentes pares MAC:puerto .
   
-  ```python  
-  @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
+```python
+@set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
 def switch_features_handler(self, ev):
     super(SimpleSwitchRest13, self).switch_features_handler(ev)
     datapath = ev.msg.datapath
     self.switches[datapath.id] = datapath
     self.mac_to_port.setdefault(datapath.id, {})
-  ```
+```
 
-
-* **Metodo set_mac_to_port**: Metodo que registra la direccion MAC y el puerto en el switch especificado. Este medodo es ejecutado cuando el REST API es llamado por el metodo PUT.
+* **Metodo set_mac_to_port**: Metodo que registra la direccion MAC y el puerto en el switch especificado. Este medodo es ejecutado cuando el REST API es llamado por el metodo PUT. En el siguiente [enlace](https://osrg.github.io/ryu-book/en/html/rest_api.html) se explica y se muestra con un ejemplo el funcionamiento de este metodo.
   
-  This method registers the MAC address and port to the specified switch. The method is executed when REST API is called by the PUT method.
+#### SimpleSwitchController ####
 
 
 ### Comandos ###
