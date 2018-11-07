@@ -107,6 +107,106 @@ def switch_features_handler(self, ev):
   
 #### SimpleSwitchController ####
 
+Esta clase accepts HTTP requests to REST API. Vamos a ver los principales aspectos:
+* **Adquision de la instancia SimpleSwitchRest13**: 
+
+```python
+
+class SimpleSwitchController(ControllerBase):
+
+    def __init__(self, req, link, data, **config):
+        super(SimpleSwitchController, self).__init__(req, link, data, **config)
+        self.simple_switch_app = data[simple_switch_instance_name]
+
+'''
+Recordar previamente en el contructor de SimpleSwitchRest13:
+
+...
+def __init__(self, *args, **kwargs):
+        super(SimpleSwitchRest13, self).__init__(*args, **kwargs)
+        self.switches = {}
+        wsgi = kwargs['wsgi']
+        wsgi.register(SimpleSwitchController,
+                      {simple_switch_instance_name: self})
+...
+'''
+
+```
+
+* **Implementacion del REST API's URL y su correspondiente procesamiento**: Para esto se usa el decoratorio **route** (De pronto por curiosidad puede ver el codigo [wsgi.py](https://github.com/osrg/ryu/blob/master/ryu/app/wsgi.py). En este codigo se encuentra la siguiente funcion para **route**:
+
+```python
+def route(name, path, methods=None, requirements=None):
+    def _route(controller_method):
+        controller_method.routing_info = {
+            'name': name,
+            'path': path,
+            'methods': methods,
+            'requirements': requirements,
+        }
+        return controller_method
+    return _route
+```
+
+La verdad no se que es pero por el momento solo centremnos en los parametros y comparemos esto con los casos implementados en el controlador:
+
+* **REST API para el GET**:
+
+```python
+@route('simpleswitch', url, methods=['GET'], requirements={'dpid': dpid_lib.DPID_PATTERN})
+def list_mac_table(self, req, **kwargs):
+
+    simple_switch = self.simple_switch_app
+    dpid = dpid_lib.str_to_dpid(kwargs['dpid'])
+
+    if dpid not in simple_switch.mac_to_port:
+        return Response(status=404)
+
+    mac_table = simple_switch.mac_to_port.get(dpid, {})
+    body = json.dumps(mac_table)
+    return Response(content_type='application/json', body=body)
+```
+
+Vemos que: 
+* **name** = 'simpleswitch' (Cualquier nombre)
+* **path** = '/simpleswitch/mactable/{dpid}'
+* **methods** = ['GET']
+* **requirements** = {'dpid': dpid_lib.DPID_PATTERN}
+
+* **REST API para el PUT**:
+
+
+```python
+@route('simpleswitch', url, methods=['PUT'], requirements={'dpid': dpid_lib.DPID_PATTERN})
+def put_mac_table(self, req, **kwargs):
+
+    simple_switch = self.simple_switch_app
+    dpid = dpid_lib.str_to_dpid(kwargs['dpid'])
+    try:
+        new_entry = req.json if req.body else {}
+    except ValueError:
+        raise Response(status=400)
+
+    if dpid not in simple_switch.mac_to_port:
+        return Response(status=404)
+
+    try:
+        mac_table = simple_switch.set_mac_to_port(dpid, new_entry)
+        body = json.dumps(mac_table)
+        return Response(content_type='application/json', body=body)
+    except Exception as e:
+        return Response(status=500)
+```
+
+Vemos que: 
+* **name** = 'simpleswitch' (Cualquier nombre)
+* **path** = '/simpleswitch/mactable/{dpid}'
+* **methods** = ['PUT']
+* **requirements** = {'dpid': dpid_lib.DPID_PATTERN}
+
+La siguiente figura tomada de 
+
+
 
 ### Comandos ###
 
