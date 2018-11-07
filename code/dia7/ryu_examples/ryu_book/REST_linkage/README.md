@@ -204,7 +204,9 @@ Vemos que:
 * **methods** = ['PUT']
 * **requirements** = {'dpid': dpid_lib.DPID_PATTERN}
 
-La siguiente figura tomada de 
+La siguiente figura tomada del siguiente [enlace](https://ruslanspivak.com/lsbaws-part1/). Tengase en cuenta lo que se lleva se mostrara en formato json. 
+
+![figura](https://ruslanspivak.com/lsbaws-part1/LSBAWS_HTTP_response_anatomy.png)
 
 
 
