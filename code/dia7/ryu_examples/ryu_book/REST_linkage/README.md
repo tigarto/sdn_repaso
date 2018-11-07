@@ -20,21 +20,19 @@ En general, lo que se busca mostrar es como permitir que una aplicación en Ryu 
 
 ![WSGI Interface](https://46zwyrvli634e39iq2l9mv8g-wpengine.netdna-ssl.com/wp-content/uploads/2016/05/g5dlafgwtz05_cpptiktuiqbj6isrtjtxvejauutz58vkwtl1je7y2n9bnu1tmf_ofggmhd0xegrn2dlee6en4tpq9x-8kmlgmhgfucb7erjetcdzg9qrbldwgm7gmdyekj5dri5.png)
 
-Al crear un REST API, es posible que la aplicación Ryu (en este caso el **learning hub**) pueda interactuar con peticiones hechas desde un navegador. Para el caso dichas peticiones se harán por medio de peticiones GET y PUT empleando la aplicacion curl.
+Al crear un REST API, es posible que la aplicación Ryu (en este caso el **Switching Hub**) pueda interactuar con peticiones hechas desde un navegador. Para el caso dichas peticiones se harán por medio de peticiones GET y PUT empleando la aplicacion curl.
 
 ## Sobre el ejemplo ##
 
-Este ejemplo fue tomado de
+Este ejemplo fue tomado de [REST Linkage](https://osrg.github.io/ryu-book/en/html/rest_api.html). El objetivo es agregar una REST link function al **Switching Hub**.
 
+### Implementando las funciones del REST Api ###
 
-This section describes how to add a REST link function to the switching hub explained in ” Switching Hub”.
+Es importante definir lo que hará cada una de las funciones del REST Api. Para el caso se implementarán las siguientes:
+1. **MAC address table adquisition API**: Retorna el contenido de la tabla MAC asociada al switch. Lo que devuelve es un para formato JSON de la direccion MAC y el numero de puerto correspondiente.
+2 **MAC address table registration API**: Registra un par (MAC address y numero de puerto) en la tabla de direcciones MAC y agrega la entrada a la tabla de flujos del switch correspondiente.
 
-
-
-
-Ryu has a Web server function corresponding to WSGI. By using this function, it is possible to create a REST API, which is useful to link with other systems or browsers.
-
-
+El archivo []()
 
 ### Comandos ###
 
