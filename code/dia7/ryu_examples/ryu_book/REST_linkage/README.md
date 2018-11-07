@@ -61,12 +61,9 @@ A continuacion se resaltan algunos elementos de esta clase:
   * **self.mac_to_port**: (heredado) contiene las parejace MAC-puerto asociasos a cada datapath.
   
   ```python
-  self.switches = {
-                    datapath.id1: datapath1,
-                    datapath.id2: datapath2,
+  self.mac_to_port = {
+                    datapath.id1: { MAC11:port11 , MAC12:port12, ..., MAC1N:port1N},
                     ...
-                    datapath.idN: datapathN
-                    
                    }
  
   ```
@@ -93,7 +90,12 @@ A continuacion se resaltan algunos elementos de esta clase:
                       )
 
   ```
-  * **Metodo handler**: El metodo ```python switch_features_handler``` del padre es sobreescrito.
+  * **Metodo handler**: El metodo ```python switch_features_handler``` del padre es sobreescrito. Este evento se invoca cuando el evento SwitchFeatures es lanzado. El metodo se encarga de:
+   * Adquirir el datapath a partir del evento (```python datapath = ev.msg.datapath```) y almacenarlo en ```self.switches```
+   * Inicializar self.mac_to_port a vacio  (```python self.mac_to_port.setdefault(datapath.id, {})```), es decir, inicializar cada datapath sin informacion de los diferentes pares MAC:puerto .
+  
+
+
   * **Metodo set_mac_to_port**: Metodo que registra la direccion MAC y el puerto en el switch especificado. Este medodo es ejecutado cuando el REST API es llamado por el metodo PUT.
   
   This method registers the MAC address and port to the specified switch. The method is executed when REST API is called by the PUT method.
