@@ -42,8 +42,61 @@ Para el caso se definen 2 clases:
    
 ### Aspectos a resaltar ###
 
-A continuación vamos a describir algunos aspectos a resaltar de la clase **SimpleSwitchRest13**
-Resaltando las principales cosas de la clase **Simple**
+A continuación vamos a describir algunos aspectos a resaltar de las clases anteriormente mencionadas.
+
+#### SimpleSwitchRest13 ####
+
+A continuacion se resaltan algunos elementos de esta clase:
+* **Atributos**:
+  * **self.switches**: Contiene los datapaths conectados. Sigue esta forma:
+  ```python
+  self.switches = {
+                    datapath.id1: datapath1,
+                    datapath.id2: datapath2,
+                    ...
+                    datapath.idN: datapathN
+                    
+                   }
+  ```
+  * **self.mac_to_port**: (heredado) contiene las parejace MAC-puerto asociasos a cada datapath.
+  
+  ```python
+  self.switches = {
+                    datapath.id1: datapath1,
+                    datapath.id2: datapath2,
+                    ...
+                    datapath.idN: datapathN
+                    
+                   }
+ 
+  ```
+
+* **Constructor**: en el constructor ```python __init__(...)``` se:
+  * Se adquiere la instancia de la **WSGIApplication** para registrar laclase controladora.
+  
+  ```python
+  
+  class SimpleSwitchRest13(simple_switch_13.SimpleSwitch13):
+
+    _CONTEXTS = {'wsgi': WSGIApplication} # to specify Ryu’s WSGI-compatible Web server class
+
+    def __init__(self, *args, **kwargs):
+        super(SimpleSwitchRest13, self).__init__(*args, **kwargs)
+        self.switches = {}
+        wsgi = kwargs['wsgi'] # Acquires the instance of WSGIApplication in order to register the controller clas
+        
+        # register the controller class
+        wsgi.register(
+                      SimpleSwitchController ''' Controller Class ''',
+                      {simple_switch_instance_name: self} '''key simple_switch_api_api es empleada por el controlador para 
+                                                             acceder a una instancia de la clase SimpleSwitchRest13'''
+                      )
+
+  ```
+  * **Metodo handler**: El metodo ```python switch_features_handler``` del padre es sobreescrito.
+  * **Metodo set_mac_to_port**: Metodo que registra la direccion MAC y el puerto en el switch especificado. Este medodo es ejecutado cuando el REST API es llamado por el metodo PUT.
+  
+  This method registers the MAC address and port to the specified switch. The method is executed when REST API is called by the PUT method.
 
 
 ### Comandos ###
