@@ -90,13 +90,21 @@ A continuacion se resaltan algunos elementos de esta clase:
                       )
 
   ```
-  * **Metodo handler**: El metodo ```python switch_features_handler``` del padre es sobreescrito. Este evento se invoca cuando el evento SwitchFeatures es lanzado. El metodo se encarga de:
+* **Metodo handler**: El metodo ```python switch_features_handler``` del padre es sobreescrito. Este evento se invoca cuando el evento SwitchFeatures es lanzado. El metodo se encarga de:
    * Adquirir el datapath a partir del evento (```python datapath = ev.msg.datapath```) y almacenarlo en ```self.switches```
    * Inicializar self.mac_to_port a vacio  (```python self.mac_to_port.setdefault(datapath.id, {})```), es decir, inicializar cada datapath sin informacion de los diferentes pares MAC:puerto .
   
+  ```python  
+  @set_ev_cls(ofp_event.EventOFPSwitchFeatures, CONFIG_DISPATCHER)
+def switch_features_handler(self, ev):
+    super(SimpleSwitchRest13, self).switch_features_handler(ev)
+    datapath = ev.msg.datapath
+    self.switches[datapath.id] = datapath
+    self.mac_to_port.setdefault(datapath.id, {})
+  ```
 
 
-  * **Metodo set_mac_to_port**: Metodo que registra la direccion MAC y el puerto en el switch especificado. Este medodo es ejecutado cuando el REST API es llamado por el metodo PUT.
+* **Metodo set_mac_to_port**: Metodo que registra la direccion MAC y el puerto en el switch especificado. Este medodo es ejecutado cuando el REST API es llamado por el metodo PUT.
   
   This method registers the MAC address and port to the specified switch. The method is executed when REST API is called by the PUT method.
 
