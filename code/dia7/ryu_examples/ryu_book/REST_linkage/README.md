@@ -1,5 +1,40 @@
 # Ensayo #
 
+INTEGRACION DEL REST API
+
+## Conceptos de utilidad ##
+
+Puede que sea necesario en algun momento darles una ojeada, por lo tanto se ponen como fuente de consulta a futuro:
+1. [Python - Network Programming](https://www.tutorialspoint.com/python/python_network_programming.htm)
+Conocimientos que podrian ser de utilidad:
+2. WSGI: 
+   * [wsgi.readthedocs.io](https://wsgi.readthedocs.io/en/latest/)
+   * [Basics of WSGI](https://www.agiliq.com/blog/2013/07/basics-wsgi/)
+   * [Let’s Build A Web Server. Part 1.](https://ruslanspivak.com/lsbaws-part1/)
+   * [Let’s Build A Web Server. Part 2.](https://ruslanspivak.com/lsbaws-part2/)
+   * [Let’s Build A Web Server. Part 3.](https://ruslanspivak.com/lsbaws-part3/)
+
+## Objetivo ##
+
+En general, lo que se busca mostrar es como permitir que una aplicación en Ryu pueda interactuar con otros sistemas o browser, que se hace, al agregar funciones REST link en la aplicacion. En el caso, lo que se busca se explica por medio de la siguiente figura (tomada del siguiente [enlace](https://blog.appdynamics.com/engineering/an-introduction-to-python-wsgi-servers-part-1/)):
+
+![WSGI Interface](https://46zwyrvli634e39iq2l9mv8g-wpengine.netdna-ssl.com/wp-content/uploads/2016/05/g5dlafgwtz05_cpptiktuiqbj6isrtjtxvejauutz58vkwtl1je7y2n9bnu1tmf_ofggmhd0xegrn2dlee6en4tpq9x-8kmlgmhgfucb7erjetcdzg9qrbldwgm7gmdyekj5dri5.png)
+
+Al crear un REST API, es posible que la aplicación Ryu (en este caso el **learning hub**) pueda interactuar con peticiones hechas desde un navegador. Para el caso dichas peticiones se harán por medio de peticiones GET y PUT empleando la aplicacion curl.
+
+## Sobre el ejemplo ##
+
+Este ejemplo fue tomado de
+
+
+This section describes how to add a REST link function to the switching hub explained in ” Switching Hub”.
+
+
+
+
+Ryu has a Web server function corresponding to WSGI. By using this function, it is possible to create a REST API, which is useful to link with other systems or browsers.
+
+
 
 ### Comandos ###
 
