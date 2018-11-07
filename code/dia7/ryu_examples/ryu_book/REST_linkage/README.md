@@ -30,9 +30,21 @@ Este ejemplo fue tomado de [REST Linkage](https://osrg.github.io/ryu-book/en/htm
 
 Es importante definir lo que hará cada una de las funciones del REST Api. Para el caso se implementarán las siguientes:
 1. **MAC address table adquisition API**: Retorna el contenido de la tabla MAC asociada al switch. Lo que devuelve es un para formato JSON de la direccion MAC y el numero de puerto correspondiente.
-2 **MAC address table registration API**: Registra un par (MAC address y numero de puerto) en la tabla de direcciones MAC y agrega la entrada a la tabla de flujos del switch correspondiente.
+2. **MAC address table registration API**: Registra un par (MAC address y numero de puerto) en la tabla de direcciones MAC y agrega la entrada a la tabla de flujos del switch correspondiente.
 
-El archivo []()
+El archivo **XXXXXXX.py** muestra como se llevo a cabo esto.
+
+Para el caso se definen 2 clases:
+1. **SimpleSwitchController**: Que es la clase que consume siendo el puente entre las peticiones GET y POST y la aplicacion asociada al Switching Hub. Esta lleva a cabo las siguientes tareas:
+   * Define la URL para redicir los requerimientos HTTP.
+   * Define los metodos que seran invocados al hacer peticiones HTTP a la respectiva URL.
+2. **SimpleSwitchRest13**: Subclase de la aplicacion **Switching Hub** con la capacidad de actualizar la direccin MAC.
+   
+### Aspectos a resaltar ###
+
+A continuación vamos a describir algunos aspectos a resaltar de la clase **SimpleSwitchRest13**
+Resaltando las principales cosas de la clase **Simple**
+
 
 ### Comandos ###
 
