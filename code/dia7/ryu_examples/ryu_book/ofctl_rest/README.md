@@ -4,16 +4,40 @@
 ## ¿Por que usar el API REST? ##
 Esta API es de utilidad por que:
 1. Facilita ver el estado actual de los switches concetados al controlador. 
-2. Facilita la inlación manual de nuevos flujos, grupos y metricas.
+2. Facilita la inlación manual de nuevos flujos y grupos.
+3. Facilita la obtención y actualización de estadisticas.
 
 ## Recomendaciones ##
 
-* Usar en ambiente de depuración no de produccion producción.
+* Usar en ambiente de depuración no de produccion producción, esto por cuestiones de seguridad principalmente.
 * Emplear un consumidor de la interfaz, para el caso se pueden emplear herramientas como curl y postman.
 
+## Resumen ##
+
+Anteriormente se mostro la capacidad para construir aplicaciones internas codificadas teniendo en cuenta el lenguaje y la interfaz de programación del controlador. El ejemplo analizado fue el **simple_switch**; en este, el controlador definia la lógica necesaria para hacer que el switch openflow se comportara como un swit tradicional. Sin embargo, en este caso, es posible que se le indique a un switch openflow la manera de funcionar (como **simple_switch** para el caso) por medio de la REST API. En el siguiente [enlace](https://ryu.readthedocs.io/en/latest/app/ofctl_rest.html#id10) se muestra como construir aplicaciones para Ryu usando el REST API. 
+
+## Ejemplos ##
+
+A continuación se van a experimentar los ejemplos analizando las paginas:
+1. [Interactive Ryu with Postman](https://inside-openflow.com/2016/06/23/interactive-ryu-with-postman/)
+2. [Built-in Ryu applications with ryu.app.ofctl_rest
+](https://ryu.readthedocs.io/en/latest/app/ofctl_rest.html#id10)
+
+Para el caso se emplearán las siguientes herramientas para consumo de la interfaz:
+1. curl
+2. postman
+
+### Ejemplo 1###
 
 
+ryu.app.ofctl_rest provides REST APIs for retrieving the switch stats and Updating the switch stats. This application helps you debug your application and get various statistics.
 
+we can use the API to override the functionality of the learning switch.
+
+the ryu-manager command above demonstrates the power of Ryu’s multi-component design. You can have more than one controller application running at the same time and it is often useful to code your applications so they can run independently or cooperatively with other applications. In this example, we have the simple learning L2 switch application provided by ryu.app.simple_switch and the REST API provided by ryu.app.ofctl_rest. As demonstrated earlier, you can run the switch without the API and, as we will demonstrate later, we can use the API to override the functionality of the learning switch
+
+> Tip
+> the ryu-manager command above demonstrates the power of Ryu’s multi-component design. You can have more than one controller application running at the same time and it is often useful to code your applications so they can run independently or cooperatively with other applications.
 
 https://ryu.readthedocs.io/en/latest/app/ofctl_rest.html
 https://inside-openflow.com/2016/06/23/interactive-ryu-with-postman/
