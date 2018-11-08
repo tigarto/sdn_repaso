@@ -1,3 +1,7 @@
+https://ryu.readthedocs.io/en/latest/app/ofctl_rest.html
+
+
+
 
 
 **Enlaces sin organizar**
@@ -14,3 +18,5 @@
 * https://www.kth.se/social/files/569421cff276546db5254b80/Final_report_CRAVED.pdf
 * https://www.researchgate.net/publication/323717318_Multi-controller_Based_Software-Defined_Networking_A_Survey
 * orchflow
+* https://www.grotto-networking.com/SDNfun.html#basic-graph-creation-and-an-algorithm
+* https://www.kth.se/social/files/569421cff276546db5254b80/Final_report_CRAVED.pdf (sobre metricas)
