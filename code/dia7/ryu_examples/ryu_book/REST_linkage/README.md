@@ -1,6 +1,4 @@
-# Ensayo #
-
-INTEGRACION DEL REST API
+# NTEGRACION DEL REST API #
 
 ## Conceptos de utilidad ##
 
@@ -208,9 +206,10 @@ La siguiente figura tomada del siguiente [enlace](https://ruslanspivak.com/lsbaw
 
 ![figura](https://ruslanspivak.com/lsbaws-part1/LSBAWS_HTTP_response_anatomy.png)
 
+Como se mostrará en los ejemplos que se verán a continuacin se notará que se hace uso de la herramienta **curl** para hacer las peticiones **GET** y **POST** al swith. Una alternativa mas amigable y hasta empleando interfaz es por medio del uso de [postman](https://www.getpostman.com/) el cual es una herramienta para [Api Testing](https://en.wikipedia.org/wiki/API_testing). Un tutorial que muestra como usarlo se muestra en el enlace [Interactive Ryu with Postman](https://inside-openflow.com/2016/06/23/interactive-ryu-with-postman/)
 
 
-### Comandos ###
+### Ejemplos ###
 
 ### Test 1 ###
 
