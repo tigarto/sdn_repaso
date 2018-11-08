@@ -1,5 +1,22 @@
-https://ryu.readthedocs.io/en/latest/app/ofctl_rest.html
 
+
+
+## ¿Por que usar el API REST? ##
+Esta API es de utilidad por que:
+1. Facilita ver el estado actual de los switches concetados al controlador. 
+2. Facilita la inlación manual de nuevos flujos, grupos y metricas.
+
+## Recomendaciones ##
+
+* Usar en ambiente de depuración no de produccion producción.
+* Emplear un consumidor de la interfaz, para el caso se pueden emplear herramientas como curl y postman.
+
+
+
+
+
+https://ryu.readthedocs.io/en/latest/app/ofctl_rest.html
+https://inside-openflow.com/2016/06/23/interactive-ryu-with-postman/
 
 
 
