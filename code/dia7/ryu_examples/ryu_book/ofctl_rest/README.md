@@ -1,4 +1,4 @@
-
+# OFCTL REST#
 
 
 ## ¿Por que usar el API REST? ##
@@ -28,158 +28,40 @@ Para el caso se emplearán las siguientes herramientas para consumo de la interf
 2. postman
 
 ### Ejemplo 1 ###
+Este ejemplo va a seguir con calma los pasos descritos en el enlace [Interactive Ryu with Postman](https://inside-openflow.com/2016/06/23/interactive-ryu-with-postman/). Para el caso, se asume que ya se instalo **postman**. 
 
+1. Arrancar la topologia:
+
+```
 sudo mn --topo single,3 --mac --switch ovsk --controller remote
-
-sudo ryu-manager simple_switch.py ofctl_rest.py
-
-
-
-
-http://localhost:8080/stats/switches
-
-
-
-
-
-```JSON
-{
-    "1": [
-        {
-            "actions": [
-                "OUTPUT:1"
-            ],
-            "idle_timeout": 0,
-            "cookie": 0,
-            "packet_count": 3,
-            "hard_timeout": 0,
-            "byte_count": 238,
-            "duration_nsec": 368000000,
-            "priority": 32768,
-            "duration_sec": 6,
-            "table_id": 0,
-            "match": {
-                "dl_dst": "00:00:00:00:00:01",
-                "dl_src": "00:00:00:00:00:02",
-                "in_port": 2
-            }
-        },
-        {
-            "actions": [
-                "OUTPUT:2"
-            ],
-            "idle_timeout": 0,
-            "cookie": 0,
-            "packet_count": 2,
-            "hard_timeout": 0,
-            "byte_count": 140,
-            "duration_nsec": 366000000,
-            "priority": 32768,
-            "duration_sec": 6,
-            "table_id": 0,
-            "match": {
-                "dl_dst": "00:00:00:00:00:02",
-                "dl_src": "00:00:00:00:00:01",
-                "in_port": 1
-            }
-        },
-        {
-            "actions": [
-                "OUTPUT:1"
-            ],
-            "idle_timeout": 0,
-            "cookie": 0,
-            "packet_count": 3,
-            "hard_timeout": 0,
-            "byte_count": 238,
-            "duration_nsec": 347000000,
-            "priority": 32768,
-            "duration_sec": 6,
-            "table_id": 0,
-            "match": {
-                "dl_dst": "00:00:00:00:00:01",
-                "dl_src": "00:00:00:00:00:03",
-                "in_port": 3
-            }
-        },
-        {
-            "actions": [
-                "OUTPUT:3"
-            ],
-            "idle_timeout": 0,
-            "cookie": 0,
-            "packet_count": 2,
-            "hard_timeout": 0,
-            "byte_count": 140,
-            "duration_nsec": 346000000,
-            "priority": 32768,
-            "duration_sec": 6,
-            "table_id": 0,
-            "match": {
-                "dl_dst": "00:00:00:00:00:03",
-                "dl_src": "00:00:00:00:00:01",
-                "in_port": 1
-            }
-        },
-        {
-            "actions": [
-                "OUTPUT:2"
-            ],
-            "idle_timeout": 0,
-            "cookie": 0,
-            "packet_count": 3,
-            "hard_timeout": 0,
-            "byte_count": 238,
-            "duration_nsec": 342000000,
-            "priority": 32768,
-            "duration_sec": 6,
-            "table_id": 0,
-            "match": {
-                "dl_dst": "00:00:00:00:00:02",
-                "dl_src": "00:00:00:00:00:03",
-                "in_port": 3
-            }
-        },
-        {
-            "actions": [
-                "OUTPUT:3"
-            ],
-            "idle_timeout": 0,
-            "cookie": 0,
-            "packet_count": 2,
-            "hard_timeout": 0,
-            "byte_count": 140,
-            "duration_nsec": 342000000,
-            "priority": 32768,
-            "duration_sec": 6,
-            "table_id": 0,
-            "match": {
-                "dl_dst": "00:00:00:00:00:03",
-                "dl_src": "00:00:00:00:00:02",
-                "in_port": 2
-            }
-        }
-    ]
-}
 ```
 
+2. Arrancar el controlador:
 
-ryu.app.ofctl_rest provides REST APIs for retrieving the switch stats and Updating the switch stats. This application helps you debug your application and get various statistics.
+```
+sudo ryu-manager simple_switch.py ofctl_rest.py
+```
 
-we can use the API to override the functionality of the learning switch.
+3. Mirando los swiches conectado en  el browser (**URL**: http://localhost:8080/stats/switches)
 
-the ryu-manager command above demonstrates the power of Ryu’s multi-component design. You can have more than one controller application running at the same time and it is often useful to code your applications so they can run independently or cooperatively with other applications. In this example, we have the simple learning L2 switch application provided by ryu.app.simple_switch and the REST API provided by ryu.app.ofctl_rest. As demonstrated earlier, you can run the switch without the API and, as we will demonstrate later, we can use the API to override the functionality of the learning switch
+![switches_browser](./switches_browser.png)
 
-> Tip
-> the ryu-manager command above demonstrates the power of Ryu’s multi-component design. You can have more than one controller application running at the same time and it is often useful to code your applications so they can run independently or cooperatively with other applications.
+El mismo proceso se llevo a cabo mediante el uso del comando **curl** asi: curl -X GET http://localhost:8080/stats/switches. La siguiente figura muestra el resultado:
 
-https://ryu.readthedocs.io/en/latest/app/ofctl_rest.html
-https://inside-openflow.com/2016/06/23/interactive-ryu-with-postman/
+![switches_browser](./switches_curl.png)
+
+El mismo procedimiento se hace con el **postman**. A continuación se muestra el resultado:
+
+![postman](./switches_postman.png)
 
 
+4. Los demas procedimientos no se describieron a profundidad, para un mejor analisis lo invitamos a ver el enlace [Interactive Ryu with Postman](https://inside-openflow.com/2016/06/23/interactive-ryu-with-postman/) que fue de donde se saco esto.
+
+## Conclusiones ##
+Mirar como automatizar un poco este procedimiento por medio de python scripting y luego buscar conexión con otro tipo de aplicaciones.
 
 
-**Enlaces sin organizar**
+## Enlaces sin organizar ##
 
 * https://mik.bme.hu/~zfaigl/QoS/doc/README.html
 * https://pdfs.semanticscholar.org/e7a6/8f5b35b986902ce8cf8244c15d0950cf26e2.pdf
@@ -195,3 +77,5 @@ https://inside-openflow.com/2016/06/23/interactive-ryu-with-postman/
 * orchflow
 * https://www.grotto-networking.com/SDNfun.html#basic-graph-creation-and-an-algorithm
 * https://www.kth.se/social/files/569421cff276546db5254b80/Final_report_CRAVED.pdf (sobre metricas)
+* https://ryu.readthedocs.io/en/latest/app/ofctl_rest.html
+* https://inside-openflow.com/2016/06/23/interactive-ryu-with-postman/
