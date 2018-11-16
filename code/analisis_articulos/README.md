@@ -49,9 +49,35 @@ https://image.slidesharecdn.com/introductiontoopenflow-141107081421-conversion-g
    * **Packer_In message**: Mensaje enviado desde el switch al controlador. Este indica un **Table_miss event**.
    * **Packet_Out message**: Mensaje enviado desde el controlador al switch para cosas como: modificar la tabla de flujos (si se manda un flow_mod), o para que el switch haga una actividad de forwarding (reenvio) de este.
 
-7. **Ataques de denegacion de servicio**: Un ataque de denegacion de servicio es un ataque a una red con el fin de hacer el servicio inaccesibla para usuarios legitimos. Normalmente proboca la perdida de conectividad por el alto consumo de ancho de banda de la red victima o la sobrecarga de los sistemas que la conforman. En [A Cisco Guide to Defending Against Distributed Denial of Service Attacks](https://www.cisco.com/c/en/us/about/security-center/guide-ddos-defense.html) se hace una buena descripción sobre estos. 
+https://www.slideshare.net/bbsali0/the-potential-impact-of-software-defined-networking-sdn-on-security/16-Open_vSwitch_Forwarding_Physical_HardwareHypervisor
 
-8. **IP Spoofing**: Ataque que sucede cuando un atacante envia paquetes con una dirección IP fuente falsa con el fin de consumir los recursos de la victima. Existen otros tipos de ataques tipo spoofing como ARP Spoofing y DNS Spoofing por citar algunos (ver: https://www.springboard.com/blog/spoofing-attacks/). Este enlace hace una ilustracion muy buena: https://blog.cloudflare.com/the-root-cause-of-large-ddos-ip-spoofing/. La siguiente figura tomada de [Spoofing Attacks: Understanding What They Are and How to Prevent Them](https://www.springboard.com/blog/spoofing-attacks/)
+[imagen_forwarding](https://image.slidesharecdn.com/sdn-security-121104170757-phpapp01/95/the-potential-impact-of-software-defined-networking-sdn-on-security-16-638.jpg?cb=1356526484)
+
+
+https://image.slidesharecdn.com/sdn-security-121104170757-phpapp01/95/the-potential-impact-of-software-defined-networking-sdn-on-security-16-638.jpg?cb=1356526484
+
+
+7. **Matching** --> Event matching
+
+https://etherealmind.com/sdn-use-case-firewall-migration-in-the-enterprise/
+https://www.mdpi.com/1999-5903/6/2/302/htm
+http://openflownetworking.blogspot.com/2016/04/openflow-concept.html
+
+http://mbat-cctu.nsysu.edu.tw/data/SDN_NFV_class/
+
+http://www.linux-magazine.com/Issues/2014/162/OpenFlow
+
+![imagen](https://etherealmind.com/wp-content/uploads/2013/03/sdn-firewall-migration-6.png)
+
+8. **Insersion proactiva u reactiva**: 
+   * https://www.slideshare.net/joelwking/introduction-to-openflow-41257742 
+   * http://networkstatic.net/openflow-proactive-vs-reactive-flows/
+   
+9. **Aplicaciones internas y externas**
+
+10. **Ataques de denegacion de servicio**: Un ataque de denegacion de servicio es un ataque a una red con el fin de hacer el servicio inaccesibla para usuarios legitimos. Normalmente proboca la perdida de conectividad por el alto consumo de ancho de banda de la red victima o la sobrecarga de los sistemas que la conforman. En [A Cisco Guide to Defending Against Distributed Denial of Service Attacks](https://www.cisco.com/c/en/us/about/security-center/guide-ddos-defense.html) se hace una buena descripción sobre estos. 
+
+11. **IP Spoofing**: Ataque que sucede cuando un atacante envia paquetes con una dirección IP fuente falsa con el fin de consumir los recursos de la victima. Existen otros tipos de ataques tipo spoofing como ARP Spoofing y DNS Spoofing por citar algunos (ver: https://www.springboard.com/blog/spoofing-attacks/). Este enlace hace una ilustracion muy buena: https://blog.cloudflare.com/the-root-cause-of-large-ddos-ip-spoofing/. La siguiente figura tomada de [Spoofing Attacks: Understanding What They Are and How to Prevent Them](https://www.springboard.com/blog/spoofing-attacks/)
 
 ![IP_spoofing](https://www.springboard.com/blog/wp-content/uploads/2018/06/image1.jpg)
 
