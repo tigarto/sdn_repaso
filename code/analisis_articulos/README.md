@@ -12,6 +12,10 @@
 
 ![sdn_arch](https://qmonnet.github.io/whirl-offload/img/misc/sdn.svg)
 
-http://tech4b.blogspot.com/2012/04/how-software-defined-networking-will.html
-https://qmonnet.github.io/whirl-offload/2016/07/08/introduction-to-sdn/
+2. **Componentes de la arquitectura**: Basicamente se hablan de capas e interfaces. 
+   1. **Capas**:
+      1. ss
+
+* http://tech4b.blogspot.com/2012/04/how-software-defined-networking-will.html
+* https://qmonnet.github.io/whirl-offload/2016/07/08/introduction-to-sdn/
 
