@@ -46,8 +46,8 @@ Permiten flexibilidad (https://www.slideshare.net/joelwking/introduction-to-open
 https://image.slidesharecdn.com/introductiontoopenflow-141107081421-conversion-gate02/95/introduction-to-openflow-36-638.jpg?cb=1415710317)
 
     A continuacion se hablan de algunos mensajes de importancia de los anteriormente mostrados:
-    * **Packer_In message**: Mensaje enviado desde el switch al controlador. Este indica un **Table_miss event**.
-    * **Packet_Out message**: Mensaje enviado desde el controlador al switch para cosas como: modificar la tabla de flujos (si se manda un flow_mod), o para que el switch haga una actividad de forwarding (reenvio) de este.
+   * **Packer_In message**: Mensaje enviado desde el switch al controlador. Este indica un **Table_miss event**.
+   * **Packet_Out message**: Mensaje enviado desde el controlador al switch para cosas como: modificar la tabla de flujos (si se manda un flow_mod), o para que el switch haga una actividad de forwarding (reenvio) de este.
 
 7. **Ataques de denegacion de servicio**: Un ataque de denegacion de servicio es un ataque a una red con el fin de hacer el servicio inaccesibla para usuarios legitimos. Normalmente proboca la perdida de conectividad por el alto consumo de ancho de banda de la red victima o la sobrecarga de los sistemas que la conforman. En [A Cisco Guide to Defending Against Distributed Denial of Service Attacks](https://www.cisco.com/c/en/us/about/security-center/guide-ddos-defense.html) se hace una buena descripción sobre estos. 
 
