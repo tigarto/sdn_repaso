@@ -36,8 +36,10 @@ https://www.slideshare.net/AzharHKhuwajaMEngMEF/sdn-fundamentals-short-presentat
 
 5. **Flujo (flow)**: Es una secuencia de paquetes que va desde una fuente a un destino ([definicion de wikipedia](https://en.wikipedia.org/wiki/Traffic_flow_(computer_networking))). En el siguiente [enlace](https://www.quora.com/What-is-network-flow) se muestra una buena analogia.
 
-6.
+6. **Mensajes Openflow**: En el siguiente [enlace](http://wwwaem.brocade.com/content/html/en/deployment-guide/brcd-fastiron-openflow-dp/GUID-95D41B2F-E3D4-45FE-8992-52674D73DA4F.html) se muestra una lista de mansajes Openflow. Otro enlace que puede ser bueno revisar es el [siguiente](https://overlaid.net/2017/02/15/openflow-basic-concepts-and-theory/). La siguiente figura tomada de las diapositivas [Introductionn to Openflow](https://www.slideshare.net/joelwking/introduction-to-openflow-41257742) muestran estos mensajes graficamente:
 
+[mensajes](
+https://image.slidesharecdn.com/introductiontoopenflow-141107081421-conversion-gate02/95/introduction-to-openflow-36-638.jpg?cb=1415710317)
 
 
 
@@ -46,3 +48,7 @@ https://www.slideshare.net/AzharHKhuwajaMEngMEF/sdn-fundamentals-short-presentat
 * https://qmonnet.github.io/whirl-offload/2016/07/08/introduction-to-sdn/
 * https://www.slideshare.net/AzharHKhuwajaMEngMEF/sdn-fundamentals-short-presentation
 * https://www.osapublishing.org/oe/fulltext.cfm?uri=oe-19-26-B421&id=224728
+* https://overlaid.net/2017/02/15/openflow-basic-concepts-and-theory/
+* https://www.slideshare.net/joelwking/introduction-to-openflow-41257742
+
+
