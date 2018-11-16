@@ -45,12 +45,22 @@ https://image.slidesharecdn.com/introductiontoopenflow-141107081421-conversion-g
   1.  **Packer_In message**: Mensaje enviado desde el switch al controlador. Este indica un **Table_miss event**.
   2.  **Packet_Out message**: Mensaje enviado desde el controlador al switch para cosas como: modificar la tabla de flujos (si se manda un flow_mod), o para que el switch haga una actividad de forwarding (reenvio) de este.
   
-  
+7. **Ataques de denegacion de servicio**: Un ataque de denegacion de servicio es un ataque a una red con el fin de hacer el servicio inaccesibla para usuarios legitimos. Normalmente proboca la perdida de conectividad por el alto consumo de ancho de banda de la red victima o la sobrecarga de los sistemas que la conforman. En [A Cisco Guide to Defending Against Distributed Denial of Service Attacks](https://www.cisco.com/c/en/us/about/security-center/guide-ddos-defense.html) se hace una buena descripción sobre estos. 
+
+8. **IP Spoofing**: Ataque que sucede cuando un atacante envia paquetes con una dirección IP fuente falsa con el fin de consumir los recursos de la victima. Existen otros tipos de ataques tipo spoofing como ARP Spoofing y DNS Spoofing por citar algunos (ver: https://www.springboard.com/blog/spoofing-attacks/). Este enlace hace una ilustracion muy buena: https://blog.cloudflare.com/the-root-cause-of-large-ddos-ip-spoofing/. La siguiente figura tomada de [Spoofing Attacks: Understanding What They Are and How to Prevent Them](https://www.springboard.com/blog/spoofing-attacks/)
+
+![IP_spoofing](https://www.springboard.com/blog/wp-content/uploads/2018/06/image1.jpg)
 
 
-
-
-
+## Enlaces a la loca ##
+* https://idea.popcount.org/2016-09-20-strange-loop---ip-spoofing/
+* https://www.networkworld.com/article/2268110/lan-wan/chapter-1--understanding-network-security-principles.html?page=4
+* https://www.springboard.com/blog/spoofing-attacks/
+* https://blog.cloudflare.com/the-root-cause-of-large-ddos-ip-spoofing/
+* https://www.springboard.com/blog/spoofing-attacks/
+* https://www.cisco.com/c/en/us/about/press/internet-protocol-journal/back-issues/table-contents-38/104-ip-spoofing.html
+* https://blog.cloudflare.com/the-root-cause-of-large-ddos-ip-spoofing/
+* https://www.sans.org/reading-room/whitepapers/threats/spoofed-ip-address-distributed-denial-service-attacks-defense-in-depth-469
 * http://tech4b.blogspot.com/2012/04/how-software-defined-networking-will.html
 * https://qmonnet.github.io/whirl-offload/2016/07/08/introduction-to-sdn/
 * https://www.slideshare.net/AzharHKhuwajaMEngMEF/sdn-fundamentals-short-presentation
