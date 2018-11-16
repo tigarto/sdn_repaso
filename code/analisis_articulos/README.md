@@ -28,10 +28,17 @@ La siguiente figura tomada del siguiente [enlace](https://www.opennetworking.org
 
 3. **Tablas de flujos (flow tables)**: Es la estructura de datos fundamental de un dispositivo SDN. Estas permiten a un dispositibo evaluar los paquetes de ingreso (incoming packets) y tomar la accion apropiada basada en los contenidos del paquete recien recibido, en resumen, en estas estructuras se implementan las politicas. Una tabla de flujos consiste de un numero de entradas de flujo priorizadas (prioritized flow entries) o reglas.
 
-4. **Reglas**: Cada una de las entradas de la tabla de flujos, cada una consistente basicamente de dos componentes **match fields** y **actions** (como lo muestra la imagen tomada del siguiente [enlace](
+4. **Reglas**: Cada una de las entradas de la tabla de flujos, cada una consistente basicamente de dos componentes **match fields** y **actions**. Estas definen la manera como seran direccionados (tratados) los paquetes que ingresan al switch. (como lo muestra la imagen tomada del siguiente [enlace](
 https://www.slideshare.net/AzharHKhuwajaMEngMEF/sdn-fundamentals-short-presentation)).
 
 ![flow rule](https://image.slidesharecdn.com/sdnfundamentals-shortpresentation-161122162211/95/sdn-fundamentals-short-presentation-28-638.jpg?cb=1479831766)
+
+
+5. **Flujo (flow)**: Es una secuencia de paquetes que va desde una fuente a un destino ([definicion de wikipedia](https://en.wikipedia.org/wiki/Traffic_flow_(computer_networking))). En el siguiente [enlace](https://www.quora.com/What-is-network-flow) se muestra una buena analogia.
+
+6.
+
+
 
 
 
