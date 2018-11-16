@@ -16,7 +16,17 @@
    1. **Capas**:
       1. **Capa de control**: Software que se ejecuta en un servidor. Esta encargada de controlar la red y es analogo a un Sistema operativo pues abstrae la red a las aplicaciones para que estas puedan interactuar con esta sin conocer detalles de bajo nivel.
       2. **Capa de datos**: Capa compuesta por los switches Openflow (tambien llamados forwarding elements). Esta se encarga de encaminar (enrutar, dirigir) los paquetes a traves de la red.
-      3. **Capa de aplicación**: Son los programas que se ejecutan en el controlador
+      3. **Capa de aplicación**: Son los programas que se ejecutan en el controlador. Son escritos por el programador usando APIs para definir la logica de la red. Las aplicaciones pueden implementar algoritmos y protocolos para controlar la red. Tambien pueden hace cosas como reconfigurar rapidamente la red en caso de ser necesario.
+      
+   2. **Interfaces**:
+      1.  **Interfaz norte (north bound interface)**: Interfaz que comunica las aplicaciones con el controlador. Esta interfaz es ofrecida por el controlador para permitir que aplicaciones se puedan ejecutar sobre este. Este API del controlador esta destinado a proporsionar la abstraccion de los dispositivos de red y la topologia. 
+      2.  **Interfaz sur (south bound interface)**: Interface que comunica la capa de controlador (controlador) con la capa de datos. La interfaz mas comun es el protocolo **Openflow**.
+
+La siguiente figura tomada del siguiente [enlace](https://www.opennetworking.org/sdn-definition/) muestra esto:
+
+![capas](https://3vf60mmveq1g8vzn48q2o71a-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/sdn-architecture-img.jpg)
+
+
 
 * http://tech4b.blogspot.com/2012/04/how-software-defined-networking-will.html
 * https://qmonnet.github.io/whirl-offload/2016/07/08/introduction-to-sdn/
