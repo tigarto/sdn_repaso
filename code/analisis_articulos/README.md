@@ -41,6 +41,13 @@ https://www.slideshare.net/AzharHKhuwajaMEngMEF/sdn-fundamentals-short-presentat
 ![mensajes](
 https://image.slidesharecdn.com/introductiontoopenflow-141107081421-conversion-gate02/95/introduction-to-openflow-36-638.jpg?cb=1415710317)
 
+  A continuacion se hablan de algunos mensajes de importancia de los anteriormente mostrados:
+  1.  **Packer_In message**: Mensaje enviado desde el switch al controlador. Este indica un **Table_miss event**.
+  2.  **Packet_Out message**: Mensaje enviado desde el controlador al switch para cosas como: modificar la tabla de flujos (si se manda un flow_mod), o para que el switch haga una actividad de forwarding (reenvio) de este.
+  
+  
+
+
 
 
 
