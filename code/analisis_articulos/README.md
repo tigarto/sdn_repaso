@@ -14,7 +14,9 @@
 
 2. **Componentes de la arquitectura**: Basicamente se hablan de capas e interfaces. 
    1. **Capas**:
-      1. ss
+      1. **Capa de control**: Software que se ejecuta en un servidor. Esta encargada de controlar la red y es analogo a un Sistema operativo pues abstrae la red a las aplicaciones para que estas puedan interactuar con esta sin conocer detalles de bajo nivel.
+      2. **Capa de datos**: Capa compuesta por los switches Openflow (tambien llamados forwarding elements). Esta se encarga de encaminar (enrutar, dirigir) los paquetes a traves de la red.
+      3. **Capa de aplicación**: Son los programas que se ejecutan en el controlador
 
 * http://tech4b.blogspot.com/2012/04/how-software-defined-networking-will.html
 * https://qmonnet.github.io/whirl-offload/2016/07/08/introduction-to-sdn/
