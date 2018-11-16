@@ -38,7 +38,7 @@ https://www.slideshare.net/AzharHKhuwajaMEngMEF/sdn-fundamentals-short-presentat
 
 6. **Mensajes Openflow**: En el siguiente [enlace](http://wwwaem.brocade.com/content/html/en/deployment-guide/brcd-fastiron-openflow-dp/GUID-95D41B2F-E3D4-45FE-8992-52674D73DA4F.html) se muestra una lista de mansajes Openflow. Otro enlace que puede ser bueno revisar es el [siguiente](https://overlaid.net/2017/02/15/openflow-basic-concepts-and-theory/). La siguiente figura tomada de las diapositivas [Introductionn to Openflow](https://www.slideshare.net/joelwking/introduction-to-openflow-41257742) muestran estos mensajes graficamente:
 
-[mensajes](
+![mensajes](
 https://image.slidesharecdn.com/introductiontoopenflow-141107081421-conversion-gate02/95/introduction-to-openflow-36-638.jpg?cb=1415710317)
 
 
