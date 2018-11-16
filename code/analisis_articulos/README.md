@@ -34,6 +34,10 @@ https://www.slideshare.net/AzharHKhuwajaMEngMEF/sdn-fundamentals-short-presentat
 ![flow rule](https://image.slidesharecdn.com/sdnfundamentals-shortpresentation-161122162211/95/sdn-fundamentals-short-presentation-28-638.jpg?cb=1479831766)
 
 
+Permiten flexibilidad (https://www.slideshare.net/joelwking/introduction-to-openflow-41257742)....
+
+![funciones](https://image.slidesharecdn.com/introductiontoopenflow-141107081421-conversion-gate02/95/introduction-to-openflow-19-638.jpg?cb=1415710317)
+
 5. **Flujo (flow)**: Es una secuencia de paquetes que va desde una fuente a un destino ([definicion de wikipedia](https://en.wikipedia.org/wiki/Traffic_flow_(computer_networking))). En el siguiente [enlace](https://www.quora.com/What-is-network-flow) se muestra una buena analogia.
 
 6. **Mensajes Openflow**: En el siguiente [enlace](http://wwwaem.brocade.com/content/html/en/deployment-guide/brcd-fastiron-openflow-dp/GUID-95D41B2F-E3D4-45FE-8992-52674D73DA4F.html) se muestra una lista de mansajes Openflow. Otro enlace que puede ser bueno revisar es el [siguiente](https://overlaid.net/2017/02/15/openflow-basic-concepts-and-theory/). La siguiente figura tomada de las diapositivas [Introductionn to Openflow](https://www.slideshare.net/joelwking/introduction-to-openflow-41257742) muestran estos mensajes graficamente:
@@ -41,9 +45,9 @@ https://www.slideshare.net/AzharHKhuwajaMEngMEF/sdn-fundamentals-short-presentat
 ![mensajes](
 https://image.slidesharecdn.com/introductiontoopenflow-141107081421-conversion-gate02/95/introduction-to-openflow-36-638.jpg?cb=1415710317)
 
-  A continuacion se hablan de algunos mensajes de importancia de los anteriormente mostrados:
-  1.  **Packer_In message**: Mensaje enviado desde el switch al controlador. Este indica un **Table_miss event**.
-  2.  **Packet_Out message**: Mensaje enviado desde el controlador al switch para cosas como: modificar la tabla de flujos (si se manda un flow_mod), o para que el switch haga una actividad de forwarding (reenvio) de este.
+    A continuacion se hablan de algunos mensajes de importancia de los anteriormente mostrados:
+    * **Packer_In message**: Mensaje enviado desde el switch al controlador. Este indica un **Table_miss event**.
+    * **Packet_Out message**: Mensaje enviado desde el controlador al switch para cosas como: modificar la tabla de flujos (si se manda un flow_mod), o para que el switch haga una actividad de forwarding (reenvio) de este.
 
 7. **Ataques de denegacion de servicio**: Un ataque de denegacion de servicio es un ataque a una red con el fin de hacer el servicio inaccesibla para usuarios legitimos. Normalmente proboca la perdida de conectividad por el alto consumo de ancho de banda de la red victima o la sobrecarga de los sistemas que la conforman. En [A Cisco Guide to Defending Against Distributed Denial of Service Attacks](https://www.cisco.com/c/en/us/about/security-center/guide-ddos-defense.html) se hace una buena descripción sobre estos. 
 
