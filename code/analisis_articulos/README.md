@@ -30,7 +30,7 @@ La siguiente figura tomada del siguiente [enlace](https://www.opennetworking.org
 
 4. **Reglas**: Cada una de las entradas de la tabla de flujos, cada una consistente basicamente de dos componentes **match fields** y **actions** (como lo muestra la imagen tomada del siguiente [enlace](https://www.osapublishing.org/oe/fulltext.cfm?uri=oe-19-26-B421&id=224728)).
 
-![flow rule](http://imagebank.osa.org/getImage.xqy?img=cCF6ekAubGFyZ2Usb2UtMTktMjYtQjQyMS1nMDA0)
+![flow rule](https://image.slidesharecdn.com/sdnfundamentals-shortpresentation-161122162211/95/sdn-fundamentals-short-presentation-28-638.jpg?cb=1479831766)
 
 
 
