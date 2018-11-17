@@ -48,25 +48,14 @@ https://image.slidesharecdn.com/introductiontoopenflow-141107081421-conversion-g
    * **Packer_In message**: Mensaje enviado desde el switch al controlador. Este indica un **Table_miss event**.
    * **Packet_Out message**: Mensaje enviado desde el controlador al switch para cosas para que el switch haga una actividad de forwarding (reenvio) de este.
 
-https://www.slideshare.net/bbsali0/the-potential-impact-of-software-defined-networking-sdn-on-security/16-Open_vSwitch_Forwarding_Physical_HardwareHypervisor
+7. **Matching**: Comparación entre un paquete y las reglas almacenada en la tabla de flujos de un switch. Cuando la regla es encontrada se aplican las acciones dictadas por esta sobre el paquete. Cuando pasa lo contrario, se produce un **Table_miss event** indicando que no se encontro una regla asociada al paquete. La siguiente figura (obtenida del siguiente [enlace](https://etherealmind.com/sdn-use-case-firewall-migration-in-the-enterprise/)) ilustra esto: 
 
-[imagen_forwarding](https://image.slidesharecdn.com/sdn-security-121104170757-phpapp01/95/the-potential-impact-of-software-defined-networking-sdn-on-security-16-638.jpg?cb=1356526484)
+![matching](https://etherealmind.com/wp-content/uploads/2013/03/sdn-firewall-migration-6.png)
 
+El proceso de matchin se rigue por la siguiente grafica (obtenida de: [Software-Defined Networking Using OpenFlow: Protocols, Applications and Architectural Design Choices](https://www.mdpi.com/1999-5903/6/2/302/htm)):
 
-https://image.slidesharecdn.com/sdn-security-121104170757-phpapp01/95/the-potential-impact-of-software-defined-networking-sdn-on-security-16-638.jpg?cb=1356526484
+![algo_matching](https://www.mdpi.com/futureinternet/futureinternet-06-00302/article_deploy/html/images/futureinternet-06-00302-g003-1024.png)
 
-
-7. **Matching** --> Event matching
-
-https://etherealmind.com/sdn-use-case-firewall-migration-in-the-enterprise/
-https://www.mdpi.com/1999-5903/6/2/302/htm
-http://openflownetworking.blogspot.com/2016/04/openflow-concept.html
-
-http://mbat-cctu.nsysu.edu.tw/data/SDN_NFV_class/
-
-http://www.linux-magazine.com/Issues/2014/162/OpenFlow
-
-![imagen](https://etherealmind.com/wp-content/uploads/2013/03/sdn-firewall-migration-6.png)
 
 8. **Insersion proactiva u reactiva**: 
    * https://www.slideshare.net/joelwking/introduction-to-openflow-41257742 
@@ -96,5 +85,10 @@ http://www.linux-magazine.com/Issues/2014/162/OpenFlow
 * https://www.osapublishing.org/oe/fulltext.cfm?uri=oe-19-26-B421&id=224728
 * https://overlaid.net/2017/02/15/openflow-basic-concepts-and-theory/
 * https://www.slideshare.net/joelwking/introduction-to-openflow-41257742
+* https://www.slideshare.net/bbsali0/the-potential-impact-of-software-defined-networking-sdn-on-security/45-Where_to_Begin
+* http://mbat-cctu.nsysu.edu.tw/data/SDN_NFV_class/ (enlace como bueno)
+* http://www.linux-magazine.com/Issues/2014/162/OpenFlow
+* https://etherealmind.com/sdn-use-case-firewall-migration-in-the-enterprise/
+* https://www.mdpi.com/1999-5903/6/2/302/htm
 
 
