@@ -57,13 +57,14 @@ El proceso de matchin se rigue por la siguiente grafica (obtenida de: [Software-
 ![algo_matching](https://www.mdpi.com/futureinternet/futureinternet-06-00302/article_deploy/html/images/futureinternet-06-00302-g003-1024.png)
 
 
-8. **Insersion proactiva u reactiva**: 
-   * https://www.slideshare.net/joelwking/introduction-to-openflow-41257742 
-   * http://networkstatic.net/openflow-proactive-vs-reactive-flows/
+8. **Insersion proactiva u reactiva**: La siguiente figura resalta cada caso (en caso de querer profundizar mas puede consultar [OpenFlow: Proactive vs Reactive Flows](http://networkstatic.net/openflow-proactive-vs-reactive-flows/)):
    
+   ![insercion](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1eAhtJ6ixU3H3gg4uX6Rivi-GUXpdtTGBOKzFa1G4tsYBjw6a)
    
-   ![ww](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1eAhtJ6ixU3H3gg4uX6Rivi-GUXpdtTGBOKzFa1G4tsYBjw6a)
+   A continuacion se de una explicación de cada caso:
+   * **Insersion proactiva**: Cuando se da este caso, la insercion de flujos es realizada por la aplicacion, tipicamente cuando esta arranca (starts up) de modo que los flujos persistiran hasta que algun cambio en la configuracion sea realizado. Esta clase de flujo proactivo es conocido como **flujo estatico**. Otra clase de flujo proactivo se da cuando el controlador decide modificar un flujo basado en la carga de trafico que esta siendo manejada actualmente por un dispositivo de red (switch).
    
+   * **Insersion reactiva** En este caso los flujos son definidos como respuesta a un paquete enviado al controlador. En este caso, la aplicación indica al controlador la logica que se llevara a cabo como respuesta al paquete, y eventualmente, si es necsario establecera nuevos flujos en el switch para permitir que este responde localmente la proxima vez que vea un paquete que pertenezca a dicho flujo. Tales flujos se conocen como **flujos reactivos**.
    
 9. **Aplicaciones internas y externas**
 
@@ -94,5 +95,6 @@ El proceso de matchin se rigue por la siguiente grafica (obtenida de: [Software-
 * http://www.linux-magazine.com/Issues/2014/162/OpenFlow
 * https://etherealmind.com/sdn-use-case-firewall-migration-in-the-enterprise/
 * https://www.mdpi.com/1999-5903/6/2/302/htm
-
+* https://www.slideshare.net/joelwking/introduction-to-openflow-41257742 
+* http://networkstatic.net/openflow-proactive-vs-reactive-flows/
 
