@@ -24,4 +24,27 @@ Experiment design
   
   [DDoS Experiment Methodology](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.134.7224&rep=rep1&type=pdf)
   
-  [Experimental evaluation of DDoS detection and prevention using opensource and commodity hardware](https://brage.bibsys.no/xmlui/bitstream/handle/11250/2504043/16386_FULLTEXT.pdf?sequence=1)
+  [Experimental evaluation of DDoS detection and prevention using opensource and commodity hardware](https://brage.bibsys.no/xmlui/bitstream/handle/11250/2504043/16386_FULLTEXT.pdf?sequence=1) --- muestra fastnetwork la cual para el caso puede ser mejor que snort. 
+  
+  * https://fastnetmon.com/install/
+  * https://fastnetmon.com/fastnetmon-community-docker-install/
+  * https://pkgs.org/download/fastnetmon
+  
+  https://www.cs.purdue.edu/homes/fahmy/papers/trident07.pdf
+  
+  https://www.usenix.org/legacy/event/deter07/tech/full_papers/mirkovic/mirkovic.pdf
+  
+  http://www.iv2-technologies.com/HowToTestAnIPS.pdf
+  
+  https://www.dfn.de/fileadmin/7Veranstaltungen/Technologieforum/2018/Folien_Vortraege/TF_2108_Teaching_Network_Softwarization_Heseding.pdf
+  https://dl.gi.de/bitstream/handle/20.500.12116/16581/DFN-Forum-Proceedings-008.pdf?sequence=1&isAllowed=y
+  https://github.com/kit-tm/sdn-cockpit
+  
+  ## Retomable ##
+  https://github.com/tigarto/test-diarios/tree/master/abril19/test1
+https://github.com/tigarto/test-diarios/tree/master/abril20
+
+  
+  
+  
+  
