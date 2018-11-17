@@ -97,4 +97,7 @@ El proceso de matchin se rigue por la siguiente grafica (obtenida de: [Software-
 * https://www.mdpi.com/1999-5903/6/2/302/htm
 * https://www.slideshare.net/joelwking/introduction-to-openflow-41257742 
 * http://networkstatic.net/openflow-proactive-vs-reactive-flows/
+* https://www.arista.com/assets/data/pdf/user-manual/um-eos/Chapters/OpenFlow.pdf
+* https://virtualnow.net/2012/04/23/building-a-scalable-openflow-network-with-mac-based-routing/
+* https://slideplayer.com/slide/5252436/
 
