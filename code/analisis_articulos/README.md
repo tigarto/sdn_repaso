@@ -33,8 +33,7 @@ https://www.slideshare.net/AzharHKhuwajaMEngMEF/sdn-fundamentals-short-presentat
 
 ![flow rule](https://image.slidesharecdn.com/sdnfundamentals-shortpresentation-161122162211/95/sdn-fundamentals-short-presentation-28-638.jpg?cb=1479831766)
 
-
-Permiten flexibilidad (https://www.slideshare.net/joelwking/introduction-to-openflow-41257742)....
+Gracias a que la parte asociada al **match** tiene campos asociados a elementos de la capas L2, L3 y L4, un switch puede funcionar como diferentes dispositivos de red segun las reglas agregadas (Tal y como se muestra en la siguiente figura tomada del siguiente [enlace](https://www.slideshare.net/joelwking/introduction-to-openflow-41257742)).
 
 ![funciones](https://image.slidesharecdn.com/introductiontoopenflow-141107081421-conversion-gate02/95/introduction-to-openflow-19-638.jpg?cb=1415710317)
 
@@ -47,7 +46,7 @@ https://image.slidesharecdn.com/introductiontoopenflow-141107081421-conversion-g
 
     A continuacion se hablan de algunos mensajes de importancia de los anteriormente mostrados:
    * **Packer_In message**: Mensaje enviado desde el switch al controlador. Este indica un **Table_miss event**.
-   * **Packet_Out message**: Mensaje enviado desde el controlador al switch para cosas como: modificar la tabla de flujos (si se manda un flow_mod), o para que el switch haga una actividad de forwarding (reenvio) de este.
+   * **Packet_Out message**: Mensaje enviado desde el controlador al switch para cosas para que el switch haga una actividad de forwarding (reenvio) de este.
 
 https://www.slideshare.net/bbsali0/the-potential-impact-of-software-defined-networking-sdn-on-security/16-Open_vSwitch_Forwarding_Physical_HardwareHypervisor
 
