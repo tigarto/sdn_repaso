@@ -61,6 +61,10 @@ El proceso de matchin se rigue por la siguiente grafica (obtenida de: [Software-
    * https://www.slideshare.net/joelwking/introduction-to-openflow-41257742 
    * http://networkstatic.net/openflow-proactive-vs-reactive-flows/
    
+   
+   ![ww](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1eAhtJ6ixU3H3gg4uX6Rivi-GUXpdtTGBOKzFa1G4tsYBjw6a)
+   
+   
 9. **Aplicaciones internas y externas**
 
 10. **Ataques de denegacion de servicio**: Un ataque de denegacion de servicio es un ataque a una red con el fin de hacer el servicio inaccesibla para usuarios legitimos. Normalmente proboca la perdida de conectividad por el alto consumo de ancho de banda de la red victima o la sobrecarga de los sistemas que la conforman. En [A Cisco Guide to Defending Against Distributed Denial of Service Attacks](https://www.cisco.com/c/en/us/about/security-center/guide-ddos-defense.html) se hace una buena descripción sobre estos. 
