@@ -28,6 +28,27 @@ La siguiente figura (tomada del siguiente [enlace](https://www.mdpi.com/1999-590
 
 ## Experimento ##
 
+Enmarcandolo en la metodologia de [DDoS Experiment Methodology](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.134.7224&rep=rep1&type=pdf). Se tiene para un entorno emulado usando mininet:
+
+
+1. Mecanismo de ataque: 
+   * Flooding: Usando hping3.
+
+2. Background traffic:
+   * No se habla nada al respeco
+
+3. Topologia de red:
+   * Linear: dos sw y cuatro host/sw.
+
+4. Mecanismo de defensa:
+   * No se esta analizando.
+
+5. Metricas:
+   * Ancho de banda, jitter, loss rate, y otros parametros del link de red: Uso de iperf.
+   * sniffing: Empleo de wireshark.
+   
+
+
 
 
 
