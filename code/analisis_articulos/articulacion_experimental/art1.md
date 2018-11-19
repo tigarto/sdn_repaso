@@ -19,9 +19,9 @@ investigando el efecto en los controladores POX y OpenDaylight (ODL). Para el ca
 
 **¿Que sucede cuando hay un ataque?**
 
-La siguiente figura muestra el caso normal:
+La siguiente figura (tomada del siguiente [enlace](https://www.semanticscholar.org/paper/Stochastic-Switching-Using-OpenFlow-Shourmasti/80a3502a00757e52c7616e150d4203f8071a44a7)) muestra el caso normal:
 
-https://ai2-s2-public.s3.amazonaws.com/figures/2017-08-08/80a3502a00757e52c7616e150d4203f8071a44a7/30-Figure2-7-1.png
+![fig_reactive](https://ai2-s2-public.s3.amazonaws.com/figures/2017-08-08/80a3502a00757e52c7616e150d4203f8071a44a7/30-Figure2-7-1.png)
 
 
 
