@@ -19,31 +19,13 @@ investigando el efecto en los controladores POX y OpenDaylight (ODL). Para el ca
 
 **¿Que sucede cuando hay un ataque?**
 
-La siguiente figura (tomada del siguiente [enlace](https://www.semanticscholar.org/paper/Stochastic-Switching-Using-OpenFlow-Shourmasti/80a3502a00757e52c7616e150d4203f8071a44a7)) muestra el caso normal:
+La siguiente figura (tomada del siguiente [enlace](https://www.mdpi.com/1999-5903/6/2/302/htm)) muestra el caso normal:
 
-![fig_reactive](https://ai2-s2-public.s3.amazonaws.com/figures/2017-08-08/80a3502a00757e52c7616e150d4203f8071a44a7/30-Figure2-7-1.png)
+![fig_reactive](https://www.mdpi.com/futureinternet/futureinternet-06-00302/article_deploy/html/images/futureinternet-06-00302-g010-1024.png)
+
+¿Pero que pasa en caso en el cual se esta lanzando un ataque DoS que involucre flooding (inundacion por la gran cantidad de paquetes enviados a la vez) y spoofing (por la falsificación de IPs) En este caso (suponiendo que la IP fuente de los paquetes es la falsificada) el efecto sera que la mayoria de los paquetes al ser comparados generaran muchos miss-table por lo que los paquetes seran enviados al controlador. En este caso, el controlador es inundado con paquetes para procesar y escribir flujos (dado el caso) en la tabla de flujos del switch, lo que hace que su rendimiento se vea afectado. Asi mismo, los switch buffers pueden tener un memory overflow debido a la sobrecarga de paquetes y flujos inutiles en la tabla de flujos, lo cual hara que, como resultado nungun flujo adicional pueda ser instalado en la tabla de flujos del switch. **This bottleneck to the controller may result in many packets being dropped hence low throughput and a longer delay in the network**
 
 
 
-
-
-Normally in SDN, every packet received in port of a switch
-is matched with the existing flow table. If a flow-table exists
-for a packet then a packet is forwarded to outgoing port,
-otherwise a packet is stored in a buffer and a packet header is
-forwarded to the controller using OFPT_PACKET_IN. When a
-controller is previously known to be on the outgoing port, a
-flow table is installed to the switch by using
-OFPT_FLOW_MOD otherwise flooding a packet to all switch
-ports except an incoming port of a switch to learn the
-destination.
-The packet with a different source IP address means that
-most of the packets will lead to packet miss in the switch flows
-tables because of the packets being forwarded to the controller.
-In this case, a controller will be flooded with many packets to
-process and writing a flow table back to the switch. However,
-the switch buffers may run out of memory because of
-overloading with useless flow table. As a result, no more flow
-table will be installed in the switch. This bottleneck to the
-controller may result in many packets being dropped hence low
-throughput and a longer delay in the network. 
+* https://www.semanticscholar.org/paper/Stochastic-Switching-Using-OpenFlow-Shourmasti/80a3502a00757e52c7616e150d4203f8071a44a7
+* https://ieeexplore.ieee.org/document/7249166
