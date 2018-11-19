@@ -26,6 +26,10 @@ La siguiente figura (tomada del siguiente [enlace](https://www.mdpi.com/1999-590
 ¿Pero que pasa en caso en el cual se esta lanzando un ataque DoS que involucre flooding (inundacion por la gran cantidad de paquetes enviados a la vez) y spoofing (por la falsificación de IPs) En este caso (suponiendo que la IP fuente de los paquetes es la falsificada) el efecto sera que la mayoria de los paquetes al ser comparados generaran muchos miss-table por lo que los paquetes seran enviados al controlador. En este caso, el controlador es inundado con paquetes para procesar y escribir flujos (dado el caso) en la tabla de flujos del switch, lo que hace que su rendimiento se vea afectado. Asi mismo, los switch buffers pueden tener un memory overflow debido a la sobrecarga de paquetes y flujos inutiles en la tabla de flujos, lo cual hara que, como resultado nungun flujo adicional pueda ser instalado en la tabla de flujos del switch. **This bottleneck to the controller may result in many packets being dropped hence low throughput and a longer delay in the network**
 
 
+## Experimento ##
+
+
+
 
 * https://www.semanticscholar.org/paper/Stochastic-Switching-Using-OpenFlow-Shourmasti/80a3502a00757e52c7616e150d4203f8071a44a7
 * https://ieeexplore.ieee.org/document/7249166
