@@ -22,8 +22,6 @@ investigando el efecto en los controladores POX y OpenDaylight (ODL). Para el ca
 La siguiente figura (tomada del siguiente [enlace](https://www.mdpi.com/1999-5903/6/2/302/htm)) muestra el caso normal:
 
 ![fig_reactive](https://www.mdpi.com/futureinternet/futureinternet-06-00302/article_deploy/html/images/futureinternet-06-00302-g010-1024.png)
-![fig_reactive](
-https://camo.githubusercontent.com/9156f29e9bd6d26f794c6e4b5a44b8929c592ea5/68747470733a2f2f7777772e6d6470692e636f6d2f667574757265696e7465726e65742f667574757265696e7465726e65742d30362d30303330322f61727469636c655f6465706c6f792f68746d6c2f696d616765732f667574757265696e7465726e65742d30362d30303330322d673031302d313032342e706e67)
 
 ¿Pero que pasa en caso en el cual se esta lanzando un ataque DoS que involucre flooding (inundacion por la gran cantidad de paquetes enviados a la vez) y spoofing (por la falsificación de IPs) En este caso (suponiendo que la IP fuente de los paquetes es la falsificada) el efecto sera que la mayoria de los paquetes al ser comparados generaran muchos miss-table por lo que los paquetes seran enviados al controlador. En este caso, el controlador es inundado con paquetes para procesar y escribir flujos (dado el caso) en la tabla de flujos del switch, lo que hace que su rendimiento se vea afectado. Asi mismo, los switch buffers pueden tener un memory overflow debido a la sobrecarga de paquetes y flujos inutiles en la tabla de flujos, lo cual hara que, como resultado nungun flujo adicional pueda ser instalado en la tabla de flujos del switch. **This bottleneck to the controller may result in many packets being dropped hence low throughput and a longer delay in the network**
 
