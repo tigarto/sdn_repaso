@@ -58,6 +58,11 @@ Enmarcandolo en la metodologia de [DDoS Experiment Methodology](http://citeseerx
    1. Ancho de banda entre TCP h100 y h200.
    2. Hay una disminución del ancho de banda en la red SDN, basicamente por la falta de memoria en los sw para agregar nuevos flujos associados a usuarios legitimos. Otra posible razon, sobre todo en el funcionamiento reactivo, es debida a la congestion en el controlador. 
 
+8. **Cosas por probar**: how to change the ip address of docker container?
+* https://forums.docker.com/t/ip-address-for-container/27454/6 (para ver si no tiene que ser la de docker0 -- probarlo en el ejemplo de abajo ---> docker run -d --ip="192.168.20.173" wordpressmysql).
+* https://jpetazzo.github.io/2013/10/16/configure-docker-bridge-network/
+* https://groups.google.com/forum/#!topic/docker-user/uR0DVb0aKi4
+
 ## Enlaces ##
 
 * **Hping3**:
