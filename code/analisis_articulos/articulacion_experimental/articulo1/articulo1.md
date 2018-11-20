@@ -60,6 +60,61 @@ Enmarcandolo en la metodologia de [DDoS Experiment Methodology](http://citeseerx
 
 ## Enlaces ##
 
+* **Hping3**:
+  * https://www.redeszone.net/gnu-linux/hping3-manual-de-utilizacion-de-esta-herramienta-para-manipular-paquetes-tcp-ip/
+  * https://null-byte.wonderhowto.com/how-to/hack-like-pro-conduct-active-reconnaissance-your-target-with-hping3-0148092/
+  * https://www.welivesecurity.com/la-es/2015/02/02/manipulando-paquetes-hping3/
+  * https://www.pedrocarrasco.org/manual-practico-de-hping/
+  * https://tools.kali.org/information-gathering/hping3
+  * https://www.radarhack.com/tutorial/hping2.pdf
+  * http://wiki.hping.org/94
+  * https://asecuritysite.com/dicontent/lab02_02.pdf
+  * http://knight.segfaults.net/EEE473Labs/Lab%205/Lab%205.htm
+  * http://lms.uop.edu.jo/lms/pluginfile.php/403/mod_resource/content/0/Lab-Hping3.pdf
+  * https://books.google.com.co/books?id=coJkCAAAQBAJ&pg=PA37&lpg=PA37&dq=hping3+lab&source=bl&ots=vwHlIoIWQa&sig=zRrcraCFsHkZMCHzEmyDfJRfYCw&hl=es&sa=X&ved=2ahUKEwj8wKeE_OPeAhXI2VMKHd2xAkk4ChDoATADegQIBRAB#v=onepage&q=hping3%20lab&f=false
+  * https://f5-agility-labs-ddos.readthedocs.io/en/latest/class2/module1/lab3.html
+  * https://f5-agility-labs-firewall.readthedocs.io/en/latest/class1/lab3/3a-02.html
+  * http://sites.psu.edu/cvclab/wp-content/uploads/sites/24816/2016/06/ip_spoofing.pdf
+  * https://pypi.org/project/llama/0.0.1a6/
+  * https://github.com/deter-project/magi-modules/blob/master/hping/hping3.py
+  * hping3 python github
+  * https://github.com/fishman/hpingparser
+  * https://github.com/kaosV20/pyDoS (ojo)
+  * https://blog.sflow.com/2018/04/onos-measurement-based-control.html (con sdn)
+
+* **tcpdump**: Podría ser usado como alternativa a wireshark.
+  * https://danielmiessler.com/study/tcpdump/
+  
+* **iperf**:
+  * https://openmaniak.com/es/iperf.php
+  * https://seguridadyredes.wordpress.com/2008/06/18/iperf-midiendo-ancho-de-banda-entre-dos-hosts/
+  * https://www.es.net/assets/Uploads/201007-JTIperf.pdf
+  * https://www.cs.unc.edu/Research/geni/geniEdu/03-TcpTraffic.html
+  * https://onl.wustl.edu/Tutorial/Filters,_Queues_and_Bandwidth/Using_Iperf_With_TCP.html
+  * https://www.tlm.unavarra.es/~daniel/docencia/tar/tar14_15/practicas/practica1-iperf.pdf
+  * https://resources.netbeez.net/hubfs/iPerf%20Bandwidth%20Webinar.pdf
+  * http://vip.gatech.edu/wiki/images/e/ee/Lab_2_Iperf_Command.pdf
+  * http://csie.nqu.edu.tw/smallko/sdn/iperf_mininet.htm (ojo)
+  * https://github.com/cucl-srg/L50/wiki/About-Lab-1:-ping,-traceroute,-iperf
+  * https://pypi.org/project/iperf3/
+  * https://stackoverflow.com/questions/44519799/running-iperf-server-and-client-using-multithreading-in-python-causes-segmentati
+  * http://www.jb.man.ac.uk/~jcullen/code/python/iperf_tests.py
+  * https://github.com/cloudharmony/iperf/blob/master/save.sh
+  * https://www.thegeekdiary.com/how-to-use-iperf-to-test-network-performance-in-linux/
+  * https://stackoverflow.com/questions/25702196/how-to-save-iperf-result-in-an-output-file
+  * http://www.crew-project.eu/book/export/html/196.html
+  * https://books.google.com.co/books?id=IiqqCAAAQBAJ&pg=PA77&lpg=PA77&dq=export++data+traffic+to+sqlite&source=bl&ots=tmi_02sMHS&sig=olsO8a6oUsm027xGkdrpmgQZsx0&hl=es&sa=X&ved=2ahUKEwiUubGWg-TeAhUL4VMKHYhjBkMQ6AEwCnoECAEQAQ#v=onepage&q=export%20%20data%20traffic%20to%20sqlite&f=false
+  
+* **nprobe**:
+  * https://prometheus.io/docs/prometheus/latest/storage/
+  * https://www.outlyer.com/blog/top10-open-source-time-series-databases/#Prometheus
+  * https://prometheus.io/docs/prometheus/latest/querying/api/
+  * https://dzone.com/articles/monitoring-with-prometheus
+  * https://www.ittsystems.com/best-sflow-collectors-and-analyzers/
+  * https://www.pcwdld.com/free-open-source-netflow-analyzers
+  * https://www.comparitech.com/net-admin/sflow-collectors-analyzers/
+  * https://www.comparitech.com/net-admin/best-netflow-analyzers-collectors/
+    
 * **Miselanea**:
   * https://www.semanticscholar.org/paper/Stochastic-Switching-Using-OpenFlow-Shourmasti/80a3502a00757e52c7616e150d4203f8071a44a7
   * https://ieeexplore.ieee.org/document/7249166
