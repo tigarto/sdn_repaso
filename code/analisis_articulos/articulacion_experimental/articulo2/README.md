@@ -1,14 +1,11 @@
-# jjj #
+# Experimental Evaluation of the Impact of DoS attacks in SDN #
 
-**Enlace**: [The Effects of DoS Attacks on ODL and POX SDN Controllers](https://ieeexplore.ieee.org/document/8080058)
+**Enlace**: [Experimental evaluation of the impact of DoS attacks in SDN](https://ieeexplore.ieee.org/document/8215424)
 
 ## Resumen ##
 
 En este paper se analiza el impacto de un ataque DoS contra el ancho de banda entre dos host que se encuentran en una red SDN 
-investigando el efecto en los controladores POX y OpenDaylight (ODL). Para el caso, al incremento del ataque produce los siguientes efectos:
-* Reduccion del ancho de banda.
-* Aumento en el tiempo de respuesta.
-* Imposibilidad de instalar nuevas reglas para enrutar exitosamente paquetes validos.
+
 
 ## Ataque DoS a redes SDN ##
 **Finalidad**: Intentar hacer dispositivos de red como controladores, switches, computadores servidores y redes, no disponibles para usuarios validos.
@@ -59,3 +56,12 @@ Enmarcandolo en la metodologia de [DDoS Experiment Methodology](http://citeseerx
    2. Hay una disminución del ancho de banda en la red SDN, basicamente por la falta de memoria en los sw para agregar nuevos flujos associados a usuarios legitimos. Otra posible razon, sobre todo en el funcionamiento reactivo, es debida a la congestion en el controlador. 
 
 ## Enlaces ##
+* https://onlinelibrary.wiley.com/doi/full/10.1002/sec.1759 (muy bueno)
+* https://ac.els-cdn.com/S187705091502579X/1-s2.0-S187705091502579X-main.pdf?_tid=8fa3c64d-c8b6-4253-8542-a3d9ce440f6a&acdnat=1542754593_deed3a80644f6eabc72b6db1e0449654
+* https://hal.inria.fr/hal-01401297/document
+* https://arxiv.org/pdf/1808.01177.pdf
+* https://arxiv.org/pdf/1710.08628.pdf
+* https://profsandhu.com/cs5323_s17/alsmadi15.pdf
+* https://etd.ohiolink.edu/!etd.send_file?accession=wright1513738941473344&disposition=inline
+* https://pdfs.semanticscholar.org/b584/09021f87fc2919fa3800ea42d1a500af39b8.pdf
+
