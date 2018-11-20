@@ -1,4 +1,4 @@
-# Experimental Evaluation of the Impact of DoS attacks in SDN #
+# Experimental Evaluation of the Impact of DoS attacks in SDN (Pendiente la edicion) #
 
 **Enlace**: [Experimental evaluation of the impact of DoS attacks in SDN](https://ieeexplore.ieee.org/document/8215424)
 
