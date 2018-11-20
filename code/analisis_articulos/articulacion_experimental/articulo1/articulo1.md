@@ -31,26 +31,35 @@ La siguiente figura (tomada del siguiente [enlace](https://www.mdpi.com/1999-590
 Enmarcandolo en la metodologia de [DDoS Experiment Methodology](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.134.7224&rep=rep1&type=pdf). Se tiene para un entorno emulado usando mininet:
 
 
-1. Mecanismo de ataque: 
-   * Flooding: Usando hping3.
+1. **Mecanismo de ataque**: 
+   * Flooding y spoofing: Usando hping3 (h1 -> h5)`: ```hping3  --flood --rand-source 10.0.0.5```
 
-2. Background traffic:
-   * No se habla nada al respeco
+2. **Background traffic**:
+   * No se habla nada al respecto
 
-3. Topologia de red:
+3. **Topologia de red**:
    * Linear: dos sw y cuatro host/sw.
+   * Controladores evaluados: POX y ODL.
 
-4. Mecanismo de defensa:
+4. **Mecanismo de defensa**:
    * No se esta analizando.
 
-5. Metricas:
-   * Ancho de banda, jitter, loss rate, y otros parametros del link de red: Uso de iperf.
-   * sniffing: Empleo de wireshark.
+5. **Metricas**:
+   * **Ancho de banda, jitter, loss rate, y otros parametros del link de red**: Uso de iperf.
+   * **sniffing**: Empleo de wireshark.
    
+6. **Procedimiento de test**:
+   1. Arrancar topologia.
+   2. Arrancar controlador.
+   3. Arrancar **iperf** para la medicion de las metricas.
+   4. Lanzar el ataque DoS usando **hping3**
 
+7. **Graficas y Conclusiones**:
+   1. Ancho de banda entre TCP h100 y h200.
+   2. Hay una disminución del ancho de banda en la red SDN, basicamente por la falta de memoria en los sw para agregar nuevos flujos associados a usuarios legitimos. Otra posible razon, sobre todo en el funcionamiento reactivo, es debida a la congestion en el controlador. 
 
+## Enlaces ##
 
-
-
-* https://www.semanticscholar.org/paper/Stochastic-Switching-Using-OpenFlow-Shourmasti/80a3502a00757e52c7616e150d4203f8071a44a7
-* https://ieeexplore.ieee.org/document/7249166
+* **Miselanea**:
+  * https://www.semanticscholar.org/paper/Stochastic-Switching-Using-OpenFlow-Shourmasti/80a3502a00757e52c7616e150d4203f8071a44a7
+  * https://ieeexplore.ieee.org/document/7249166
