@@ -115,3 +115,15 @@ El envio del packet_in mess desde el switch y el procesamiendo del packet_out re
 * https://etd.ohiolink.edu/!etd.send_file?accession=wright1513738941473344&disposition=inline
 * https://pdfs.semanticscholar.org/b584/09021f87fc2919fa3800ea42d1a500af39b8.pdf
 
+
+* google: Packet crafting scapy
+* https://yamakira.github.io/art-of-packet-crafting-with-scapy/
+* https://github.com/yamakira/art-of-packet-crafting-with-scapy
+* https://www.packetlevel.ch/html/scapy/docs/scapy_sans.pdf
+* https://www.sans.org/reading-room/whitepapers/testing/paper/33249
+* http://www.workrobot.com/sansfire2009/SCAPY-packet-crafting-reference.html
+* https://in.pycon.org/cfp/2016/proposals/the-art-of-packet-crafting-with-scapy~e79wb/
+* http://www.scs.ryerson.ca/~zereneh/cn8001/CN8001-PacketCraftingUsingScapy-WilliamZereneh.pdf
+* https://resources.infosecinstitute.com/15-best-free-packet-crafting-tools/#gref
+* https://thepacketgeek.com/series/building-network-tools-with-scapy/
+* 
