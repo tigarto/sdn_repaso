@@ -67,8 +67,13 @@ El objetivo para este caso es consumir las TCAM memory en switches cuando estos 
 Lo que se evalua en el experimento es la capacidad del switch para transferencia de paquetes independientemente del controlador, por lo que se asume que las reglas de transferencia relevantes para el manejo del trafico son preinstaladas en el switch.
 
 * **¿Que sucede en este ataque?**
-  1. hhh
+  1. h1 ataca.
+  2. El sw envia cada paquete de ataque como un mensaje packet_in al controlador, luego el algun momento el controlador envia de packet_out mess.
   
+El envio del packet_in mess desde el switch y el procesamiendo del packet_out recibido desde el controlador tambien implica el consumo de recursos en el switch. Como en el caso de un sw por software los recursos con compartidos tanto por el packet forwarding (transferencia de paquetes). como por el procesamiento de los mensajes openflow; el ataque puede resultar en una ruptura de la capacidad del switch para la transferencia de paqueetes. 
+  
+----------------------------------  ACA VAMOS  ----------------------------------
+
 1. **Mecanismo de ataque**: 
    * [Packet crafting](https://en.wikipedia.org/wiki/Packet_crafting): 
      * Envio de paquetes IP (TCP o UDP) con direcciones IP fuente y destino asi como MAC aleatoriamente generadas. Para lo cual se usa scapy a una tasa maxima de 500 pkts/s --> se genera un pcap.
