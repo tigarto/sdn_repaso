@@ -61,7 +61,43 @@ Enmarcandolo en la metodologia de [DDoS Experiment Methodology](http://citeseerx
       4. Se envian todos los paquetes por los puertos p1 y p2 alcanzando a h2 y h3, sin embargo no hay respuesta de estos pues ninguno es el destino. 
    2. Si se incrementa la tasa de envio, el atacante puede consumir una cantidad considerable de los recuros del controlador hasta el punto de hacerlo incapaz de manejar flujos legitimos.
    
+### Experimento 2 - Ataque al plano de datos ###
+El objetivo para este caso es consumir las TCAM memory en switches cuando estos son de hardware recursos de computo cuando estos son de software. Lo anterior impacta la capacidad para la transferencia (forwarding) de paquetese legitimos.  
+
+Lo que se evalua en el experimento es la capacidad del switch para transferencia de paquetes independientemente del controlador, por lo que se asume que las reglas de transferencia relevantes para el manejo del trafico son preinstaladas en el switch.
+
+* **¿Que sucede en este ataque?**
+  1
+1. **Mecanismo de ataque**: 
+   * [Packet crafting](https://en.wikipedia.org/wiki/Packet_crafting): 
+     * Envio de paquetes IP (TCP o UDP) con direcciones IP fuente y destino asi como MAC aleatoriamente generadas. Para lo cual se usa scapy a una tasa maxima de 500 pkts/s --> se genera un pcap.
+     * Uso de tcpreplay: usado para reproducir el archivo pcap preamente generado hasta una tasa de 70000 pkts/s.
+
+2. **Background traffic**:
+   * No se habla nada al respecto
+
+3. **Topologia de red**:
+   * Single: un sw (s1) y tres host (h1, h2, h3).
+     * h1: El atacante.
+     
+   * Controladores evaluados: Ryu, ONOS, Floodlight. El controlador corre la aplicacion asociada a los switch.
+
+4. **Mecanismo de defensa**:
+   * No se esta analizando.
+
+5. **Metricas**:
+   * **Packet delivery ratio**
+   * **Controllerv CPU load**: 
    
+7. **Graficas y Conclusiones**:
+   1. **Descripción sobre lo que pasa en el ataque**:
+      1. Los paquetes lanzados desde h1 llegan s s1 ppor el puerto p1.
+      2. Direcciones aleatorias --> No hay matching rule instalada --> se envia uel paquete al controlador.
+      3. El controlador envia de nuevo el paquete al s1 usando packet_Out mess con la accion Flooding. 
+      4. Se envian todos los paquetes por los puertos p1 y p2 alcanzando a h2 y h3, sin embargo no hay respuesta de estos pues ninguno es el destino. 
+   2. Si se incrementa la tasa de envio, el atacante puede consumir una cantidad considerable de los recuros del controlador hasta el punto de hacerlo incapaz de manejar flujos legitimos.
+
+
    
 ## Enlaces ##
 * https://onlinelibrary.wiley.com/doi/full/10.1002/sec.1759 (muy bueno)
