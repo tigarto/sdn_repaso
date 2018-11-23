@@ -61,7 +61,7 @@ links = []
 setLogLevel('info')
 
 info('*** Create the controller \n')
-c0 = RemoteController('c0', ip = "172.17.0.10", port = 6653) 
+c0 = RemoteController('c0', ip = "172.17.0.10", port = 6653)
 info(c0)
 " Create Simple topology example."
 net = Containernet(build=False)
@@ -75,8 +75,8 @@ for i in range(0,num_machines):
   hosts.append(net.addDocker('h' + str(i+1), ip='10.0.0.' + str(i + 1), dimage="local_test_machine1"))
 
 # Agregando host de medida
-client_h100 = net.addDocker('client_h100', ip='10.0.0.100', dimage="local_test_machine1")
-server_h200 = net.addDocker('server_h200', ip='10.0.0.200', dimage="local_test_machine1")    
+c_h100 = net.addDocker('c_h100', ip='10.0.0.100', dimage="local_test_machine1")
+s_h200 = net.addDocker('s_h200', ip='10.0.0.200', dimage="local_test_machine1")
 
 
 
@@ -98,6 +98,9 @@ for i in range (num_machines//2):
 for i in range (num_machines//2 + 1, num_machines):
   #links.append(net.addLink(hosts[i], s2, bw=10))  # Actualizar velocidades
   links.append(net.addLink(hosts[i], s2)) 
+
+links.append(net.addLink(c_h100, s1))
+links.append(net.addLink(s_h200, s2))
 
 #links.append(net.addLink(s1, s2, bw = 2000))
 links.append(net.addLink(s1, s2))
